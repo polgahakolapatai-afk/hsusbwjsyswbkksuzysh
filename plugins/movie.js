@@ -857,7 +857,7 @@ if (!sadas.data.dl_link || !sadas.data.dl_link.includes('https://drive.baiscopes
        
  await conn.sendMessage(config.JID || from, { 
             document: { url: mediaUrl },
-            caption: `*🎬 Name :* ${dat}\n\n${config.NAME}`,
+            caption: `*🎬 Name :* ${dat}\n\n${config.NAME}\n\n*Download Withing 7 Days 🪄*`,
             mimetype: "video/mp4",
             jpegThumbnail: await (await fetch(botimg)).buffer(),
             fileName: `${dat}.mp4`
@@ -1332,16 +1332,16 @@ let sadas = await cinesubz_info(q)
 const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
      
 	
-let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.data.title  || 'N/A'}_*
+let msg = `*🩸 Movie Name:-* *_${sadas.data.title  || 'N/A'}_*
 
-*📅 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮* _${sadas.data.date  || 'N/A'}_
-*🌎 𝗖ᴏᴜɴᴛʀʏ ➮* _${sadas.data.country  || 'N/A'}_
-*💃 𝗥ᴀᴛɪɴɢ ➮* _${sadas.data.imdb  || 'N/A'}_
-*⏰ 𝗥ᴜɴᴛɪᴍᴇ ➮* _${sadas.data.runtime  || 'N/A'}_
-*💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.data.subtitle_author  || 'N/A'}_
-*🎭 𝗚ᴇɴᴀʀᴇꜱ ➮* _${sadas.data.genres.join(', ')  || 'N/A'}_
+*📅 Release Date:-* _${sadas.data.date  || 'N/A'}_
+*🌎 Country:-* _${sadas.data.country  || 'N/A'}_
+*🌟 Rating:-* _${sadas.data.imdb  || 'N/A'}_
+*⏰ Run Time:-* _${sadas.data.runtime  || 'N/A'}_
+*💁‍♂️ Sub By:-* _${sadas.data.subtitle_author  || 'N/A'}_
+*🪄 Genaras* _${sadas.data.genres.join(', ')  || 'N/A'}_
 
-> 🌟 Follow us : *${details.chlink}*`
+📌 Movie Channel:- *https://whatsapp.com/channel/0029Vb5xFPHGE56jTnm4ZD2k*`
 await conn.sendMessage(config.JID || from, { image: { url: sadas.data.image.replace(/-\d+x\d+(?=\.jpg)/, '') }, caption: msg })
 
 
