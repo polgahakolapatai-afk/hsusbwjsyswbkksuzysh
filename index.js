@@ -32,7 +32,7 @@ const msgRetryCounterCache = new NodeCache()
 const FileType = require('file-type')
 const l = console.log
 var {
-  updateCMDStore,a
+  updateCMDStore,
   isbtnID,
   getCMDStore,
   getCmdForCmdId,
