@@ -110,7 +110,7 @@ async (conn, mek, m, {
     const uptime = await runtime(process.uptime());
 
     // Load external bot details
-    const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+   // const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
 
         const MNG = `*🫟 VISPER MD - Bot Menu*
 
