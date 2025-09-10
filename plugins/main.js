@@ -94,9 +94,9 @@ I am alive now 🎈\n✨ Thank you for choosing \`Visper-MD\` — your trusted W
 *🔗 Official Links:*  
 • *📂 GitHub Repository:* ${details.reponame}  
 • *📢 WhatsApp Channel:* ${details.chlink}   
+*💛 Thank you for trusting VISPER-MD!*
+${details.footer}`,
 
-*💛 Thank you for trusting VISPER-MD!*`,
-        footer: `${config.FOOTER}`,
         buttons: baseButtons,
         headerType: 4
       };
