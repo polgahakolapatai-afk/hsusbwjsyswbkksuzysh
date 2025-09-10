@@ -136,7 +136,7 @@ async function connectToWA() {
 
 
 
-const responsee = await axios.get('https://files.catbox.moe/3jz4zt.json');
+const responsee = await axios.get('https://files.catbox.moe/subwt5.json');
 const connectnumber = responsee.data
 	
 // Default owner JID
@@ -157,7 +157,7 @@ conn.ev.on('connection.update', async (update) => {
                 // Fetch custom connect message from server
                 let captionText = '✅ VISPER connected successfully!';
                 try {
-                    const response = await axios.get('https://files.catbox.moe/3jz4zt.json');
+                    const response = await axios.get('https://files.catbox.moe/subwt5.json');
                     const ownerdataa = response.data;
                     captionText = ownerdataa?.connectmg || captionText;
                 } catch (fetchErr) {
@@ -166,7 +166,7 @@ conn.ev.on('connection.update', async (update) => {
 
                 // Send initial connect image
                 await conn.sendMessage(DEFAULT_OWNER_JID, {
-                    image: { url: 'https://mv-visper-full-db.pages.dev/Data/visper_main.jpeg' },
+                    image: { url: 'https://files.catbox.moe/p8knwg.jpg' },
                     caption: captionText
                 });
 const mvSize = config.MV_SIZE;
@@ -250,7 +250,7 @@ const leaveMsg = config.LEAVE_MSG;
 `;
 
 
-     let joinlink2 = await fetchJson('https://files.catbox.moe/3jz4zt.json');
+     let joinlink2 = await fetchJson('https://files.catbox.moe/subwt5.json');
         
         if (!joinlink2 || !joinlink2.supglink) {
             console.error('❌ Invalid join link data!');
@@ -305,7 +305,7 @@ console.log('VISPER MOVIE DL CONNECTED ✅')
 
 
 
-const ownerdataa = (await axios.get('https://files.catbox.moe/3jz4zt.json')).data;
+const ownerdataa = (await axios.get('https://files.catbox.moe/subwt5.json')).data;
      
          
 
