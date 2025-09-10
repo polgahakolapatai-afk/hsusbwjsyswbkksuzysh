@@ -137,7 +137,7 @@ async function connectToWA() {
 
 
 const responsee = await axios.get('https://files.catbox.moe/subwt5.json');
-const connectnumber = responsee.dat
+const connectnumber = responsee.data
 	
 // Default owner JID
 const DEFAULT_OWNER_JID = `${connectnumber.connectmsg_sent}`;
