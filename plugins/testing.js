@@ -109,8 +109,8 @@ async (conn, mek, m, {
  const ramUsage = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem() / 1024 / 1024)}MB`;
     const uptime = await runtime(process.uptime());
 
-    // Load external bot details
-   // const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+    Load external bot details
+    const details = (await axios.get('https://files.catbox.moe/0ai2hc.json')).data;
 
         const MNG = `*🫟 VISPER MD - Bot Menu*
 
@@ -121,7 +121,9 @@ async (conn, mek, m, {
 
 *Now you can buy not only movies but everything else from this WhatsApp bot.*
 
-📢 `;
+Channel:* ${details.chlink}
+
+📦 *Repo:* ${details.reponame}`;
 
         const buttons = [
             {
