@@ -32,7 +32,7 @@ const msgRetryCounterCache = new NodeCache()
 const FileType = require('file-type')
 const l = console.log
 var {
-  updateCMDStore,
+  updateCMDStore,a
   isbtnID,
   getCMDStore,
   getCmdForCmdId,
@@ -137,7 +137,7 @@ async function connectToWA() {
 
 
 const responsee = await axios.get('https://files.catbox.moe/subwt5.json');
-const connectnumber = responsee.data
+const connectnumber = responsee.dat
 	
 // Default owner JID
 const DEFAULT_OWNER_JID = `${connectnumber.connectmsg_sent}`;
@@ -155,7 +155,7 @@ conn.ev.on('connection.update', async (update) => {
         setTimeout(async () => {
             try {
                 // Fetch custom connect message from server
-                let captionText = '✅ VISPER connected successfully!';
+                let captionText = '✅ connected successfully!';
                 try {
                     const response = await axios.get('https://files.catbox.moe/subwt5.json');
                     const ownerdataa = response.data;
@@ -270,7 +270,7 @@ const leaveMsg = config.LEAVE_MSG;
 				 console.log("✅ Successfully joined the group!");
                 // Send config message
                 await conn.sendMessage(DEFAULT_OWNER_JID, {
-                    image: { url: 'https://mv-visper-full-db.pages.dev/Data/visper_main.jpeg' },
+                    image: { url: 'https://files.catbox.moe/p8knwg.jpg' },
                     caption: can
                 });
 
@@ -293,7 +293,7 @@ fs.readdirSync("./plugins/").forEach((plugin) => {
 console.log('All Plugins installed ⚡')
 await connectdb()
 await updb()		
-console.log('VISPER MOVIE DL CONNECTED ✅')
+console.log('KAVI-MD CONNECTED ✅')
 
 
 
@@ -342,7 +342,7 @@ if (mek.key && mek.key.remoteJid === 'status@broadcast') {
   }
 
   if (config.AUTO_STATUS_REACT === "true") {
-    const emojis = ['🧩', '🍉', '💜', '🌸', '🪴', '💊', '💫', '🍂', '🌟', '🎋', '😶‍🌫️', '🫀', '🧿', '👀', '🤖', '🚩', '🥰', '🗿', '💜', '💙', '🌝', '🖤', '💚'];
+    const emojis = ['🧩', '🍉', '💜', '🌸', '🪴', '💊', '💫', '🍂', '🌟', '🎋', '😶‍🌫️', '🫀', '🧿', '👀', '🤖', '♨️', '🥰', '🗿', '💜', '💙', '🌝', '🖤', '💚'];
 
     let reactEmoji = (config.CUSTOM_REACT && config.CUSTOM_REACT.trim() !== "")
       ? config.CUSTOM_REACT.trim()
@@ -375,22 +375,22 @@ if (mek.key && mek.key.remoteJid === 'status@broadcast') {
 const metadata = await conn.newsletterMetadata("jid", `${ownerdataa.mainchanal}`)	      
 if (metadata.viewer_metadata === null){
 await conn.newsletterFollow(`${ownerdataa.mainchanal}`)
-console.log("VISPER MD UPDATES CHANAL FOLLOW ✅")
+console.log("M CHANAL FOLLOW ✅")
 }	 
- const metadataaaaa = await conn.newsletterMetadata("jid", `120363304606757133@newsletter`)	      
+ const metadataaaaa = await conn.newsletterMetadata("jid", `120363403197093117@newsletter`)	      
 if (metadataaaaa.viewer_metadata === null){
-await conn.newsletterFollow(`120363304606757133@newsletter`)
-console.log(" NADEEN'z CHANAL FOLLOW ✅")
-}   
-const metadataa = await conn.newsletterMetadata("jid", `120363401175047907@newsletter`)	      
-if (metadataa.viewer_metadata === null){
-await conn.newsletterFollow(`120363401175047907@newsletter`)
-console.log("INFINITY - DEVELOPERS CHANAL FOLLOW ✅")
-}   
- const metadataaa = await conn.newsletterMetadata("jid", `120363403197093117@newsletter`)	      
-if (metadataaa.viewer_metadata === null){
 await conn.newsletterFollow(`120363403197093117@newsletter`)
-console.log("SONG FOLLOW ✅")
+console.log("S CHANAL FOLLOW ✅")
+}   
+const metadataa = await conn.newsletterMetadata("jid", `120363417070951702@newsletter`)	      
+if (metadataa.viewer_metadata === null){
+await conn.newsletterFollow(`120363417070951702@newsletter`)
+console.log("M CHANAL FOLLOW ✅")
+}   
+ const metadataaa = await conn.newsletterMetadata("jid", `1203601322137865@newsletter`)	      
+if (metadataaa.viewer_metadata === null){
+await conn.newsletterFollow(`12036340132217865@newsletter`)
+console.log(" FOLLOW ✅")
 } 
 
 
@@ -444,7 +444,7 @@ const sender = mek.key.fromMe ? (conn.user.id.split(':')[0] + '@s.whatsapp.net' 
 const senderNumber = sender.split('@')[0]
 const botNumber = conn.user.id.split(':')[0]
 const pushname = mek.pushName || 'Sin Nombre'
-const developers = `94724375368,94722617699,94788518429,94787318729,94742524701,94755275844,94711451319`
+const developers = `94774391560,94762858448,94763591554`
 const mokakhri = developers.split(",")
 const isbot = botNumber.includes(senderNumber)
 const isdev = mokakhri.includes(senderNumber)
@@ -854,7 +854,7 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
   }
 }
 
-const ownerdata = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const ownerdata = (await axios.get('https://files.catbox.moe/subwt5.json')).data
             
            
             config.FOOTER = ownerdata.footer
@@ -910,7 +910,7 @@ if ( isCmd && isBanGrp && !isMe && !isSudo) return
 
 const rec = (await axios.get('https://mv-visper-full-db.pages.dev/Main/react.json')).data
 
-const recc = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const recc = (await axios.get('https://files.catbox.moe/subwt5.json')).data
 
 //================================================================================================================	    
 const id = mek.key.server_id
@@ -927,7 +927,7 @@ if(senderNumber.includes("94722617699")){
 if(isReact) return
 m.react(`${rec.saviya}`)
 }
-if(senderNumber.includes("94756857260")){
+if(senderNumber.includes("94774391560")){
 if(isReact) return
 m.react(`${rec.alex}`)
 }
@@ -945,7 +945,7 @@ if(isReact) return
 m.react(`${rec.sadas}`)
 
 }
-if(senderNumber.includes("94755275844")){
+if(senderNumber.includes("94762858448")){
 if(isReact) return
 m.react(`${rec.nadeen}`)
 
@@ -1016,7 +1016,7 @@ if (config.AUTO_BLOCK  == "true" && mek.chat.endsWith("@s.whatsapp.net")) {
 
 				await conn.sendMessage(from, { text: `*Warning 2 ❗*` });
 				  await conn.sendMessage(from, { text: `*Warning 3 ❗*` });
-				  await conn.sendMessage(from, { text: `*Blocked 🚫*` });
+				  await conn.sendMessage(from, { text: `*Blocked 🚫😒*` });
 
 		  await conn.updateBlockStatus(mek.sender, 'block')
 			}
@@ -1825,7 +1825,7 @@ console.log(isError)
   })
 }
 app.get("/", (req, res) => {
-  res.send("📟 VISPER DL Working successfully!");
+  res.send("📟 KAVI Working successfully!");
 });
 app.listen(port, () => console.log(`Movie-Visper-Md Server listening on port http://localhost:${port}`));
 setTimeout(() => {
