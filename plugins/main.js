@@ -113,7 +113,7 @@ ${details.footer}`,
         {
           image: { url: config.LOGO },
           caption,
-          footer: config.FOOTER,
+          footer: `${details.footer}`,
           buttons: [
             {
               buttonId: "video_quality_list",
@@ -134,7 +134,7 @@ ${details.footer}`,
       const customMessage = {
         image: { url: config.LOGO },
         caption,
-        footer: `${config.FOOTER}`,
+        footer: `${details.footer}`,
         buttons: baseButtons,
         headerType: 4
       };
