@@ -85,7 +85,7 @@ async (conn, mek, m, {
 
     let imageBuffer;
     try {
-      const res = await axios.get('https://files.catbox.moe/9onksv.json', {
+      const res = await axios.get('https://files.catbox.moe/p8knwg.jpg', {
         responseType: 'arraybuffer'
       });
       imageBuffer = Buffer.from(res.data, 'binary');
@@ -111,7 +111,7 @@ async (conn, mek, m, {
       };
 
       return await conn.sendMessage(from, {
-        image: imageBuffer || { url: 'https://files.catbox.moe/9onksv.json' },
+        image: imageBuffer || { url: 'https://files.catbox.moe/p8knwg.jpg' },
         caption,
         footer: config.FOOTER,
         buttons: [
