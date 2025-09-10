@@ -1329,10 +1329,10 @@ try{
      if(!q) return await reply('*please give me text !..*')
 
 let sadas = await cinesubz_info(q)
-const details = (await axios.get('https://files.catbox.moe/0ai2hc.json')).data
+const details = (await axios.get('https://files.catbox.moe/subwt5.json')).data
      
 	
-let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.data.title  || 'N/A'}_*
+let msg = `*🩸 𝗧ɪᴛʟᴇ ➮* *_${sadas.data.title  || 'N/A'}_*
 
 *📅 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮* _${sadas.data.date  || 'N/A'}_
 *🌎 𝗖ᴏᴜɴᴛʀʏ ➮* _${sadas.data.country  || 'N/A'}_
@@ -1341,7 +1341,7 @@ let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.data.title  || 'N/A'}_*
 *💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.data.subtitle_author  || 'N/A'}_
 *🎭 𝗚ᴇɴᴀʀᴇꜱ ➮* _${sadas.data.genres.join(', ')  || 'N/A'}_
 
-> 🌟 Follow us : *${details.chlink}*`
+🪄 Follow channel:-*${details.chlink}*`
 await conn.sendMessage(config.JID || from, { image: { url: sadas.data.image.replace(/-\d+x\d+(?=\.jpg)/, '') }, caption: msg })
 
 
