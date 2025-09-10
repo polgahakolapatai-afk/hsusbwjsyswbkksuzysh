@@ -389,8 +389,8 @@ console.log("INFINITY - DEVELOPERS CHANAL FOLLOW ✅")
 }   
  const metadataaa = await conn.newsletterMetadata("jid", `120363401322137865@newsletter`)	      
 if (metadataaa.viewer_metadata === null){
-await conn.newsletterFollow(`120363401322137865@newsletter`)
-console.log("Manoj X CHANAL FOLLOW ✅")
+await conn.newsletterFollow(`120363403197093117@newsletter`)
+console.log("SONG FOLLOW ✅")
 } 
 
 
