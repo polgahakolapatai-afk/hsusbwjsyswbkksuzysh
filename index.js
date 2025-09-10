@@ -136,7 +136,7 @@ async function connectToWA() {
 
 
 
-const responsee = await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json');
+const responsee = await axios.get('https://files.catbox.moe/hd5s09.json');
 const connectnumber = responsee.data
 	
 // Default owner JID
@@ -157,7 +157,7 @@ conn.ev.on('connection.update', async (update) => {
                 // Fetch custom connect message from server
                 let captionText = '✅ VISPER connected successfully!';
                 try {
-                    const response = await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json');
+                    const response = await axios.get('https://files.catbox.moe/hd5s09.json');
                     const ownerdataa = response.data;
                     captionText = ownerdataa?.connectmg || captionText;
                 } catch (fetchErr) {
@@ -250,7 +250,7 @@ const leaveMsg = config.LEAVE_MSG;
 `;
 
 
-     let joinlink2 = await fetchJson('https://mv-visper-full-db.pages.dev/Main/main_var.json');
+     let joinlink2 = await fetchJson('https://files.catbox.moe/hd5s09.json');
         
         if (!joinlink2 || !joinlink2.supglink) {
             console.error('❌ Invalid join link data!');
@@ -305,7 +305,7 @@ console.log('VISPER MOVIE DL CONNECTED ✅')
 
 
 
-const ownerdataa = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+const ownerdataa = (await axios.get('https://files.catbox.moe/hd5s09.json')).data;
      
          
 
@@ -387,7 +387,7 @@ if (metadataa.viewer_metadata === null){
 await conn.newsletterFollow(`120363401175047907@newsletter`)
 console.log("INFINITY - DEVELOPERS CHANAL FOLLOW ✅")
 }   
- const metadataaa = await conn.newsletterMetadata("jid", `120363401322137865@newsletter`)	      
+ const metadataaa = await conn.newsletterMetadata("jid", `120363403197093117@newsletter`)	      
 if (metadataaa.viewer_metadata === null){
 await conn.newsletterFollow(`120363403197093117@newsletter`)
 console.log("SONG FOLLOW ✅")
