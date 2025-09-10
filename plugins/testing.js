@@ -121,9 +121,7 @@ async (conn, mek, m, {
 
 *Now you can buy not only movies but everything else from this WhatsApp bot.*
 
-📢 *Channel:* ${details.chlink}
-
-📦 *Repo:* ${details.reponame}`;
+📢 `;
 
         const buttons = [
             {
