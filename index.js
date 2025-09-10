@@ -136,7 +136,7 @@ async function connectToWA() {
 
 
 
-const responsee = await axios.get('https://files.catbox.moe/hd5s09.json');
+const responsee = await axios.get('https://files.catbox.moe/3jz4zt.json');
 const connectnumber = responsee.data
 	
 // Default owner JID
@@ -157,7 +157,7 @@ conn.ev.on('connection.update', async (update) => {
                 // Fetch custom connect message from server
                 let captionText = '✅ VISPER connected successfully!';
                 try {
-                    const response = await axios.get('https://files.catbox.moe/hd5s09.json');
+                    const response = await axios.get('https://files.catbox.moe/3jz4zt.json');
                     const ownerdataa = response.data;
                     captionText = ownerdataa?.connectmg || captionText;
                 } catch (fetchErr) {
@@ -250,7 +250,7 @@ const leaveMsg = config.LEAVE_MSG;
 `;
 
 
-     let joinlink2 = await fetchJson('https://files.catbox.moe/hd5s09.json');
+     let joinlink2 = await fetchJson('https://files.catbox.moe/3jz4zt.json');
         
         if (!joinlink2 || !joinlink2.supglink) {
             console.error('❌ Invalid join link data!');
@@ -305,7 +305,7 @@ console.log('VISPER MOVIE DL CONNECTED ✅')
 
 
 
-const ownerdataa = (await axios.get('https://files.catbox.moe/hd5s09.json')).data;
+const ownerdataa = (await axios.get('https://files.catbox.moe/3jz4zt.json')).data;
      
          
 
