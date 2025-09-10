@@ -68,7 +68,7 @@ const number = conn.user.id.split(':')[0].replace(/@s\.whatsapp\.net$/, '');
 
     // ALIVE: Default Mode
     if (config.ALIVE === "default") {
-      const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+      const details = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
 
       const defaultMessage = {
         image: { url: config.LOGO },
@@ -96,7 +96,7 @@ I am alive now 🎈\n✨ Thank you for choosing \`Visper-MD\` — your trusted W
 • *📢 WhatsApp Channel:* ${details.chlink}   
 
 *💛 Thank you for trusting VISPER-MD!*`,
-        footer: config.FOOTER,
+        footer: `${config.FOOTER}`,
         buttons: baseButtons,
         headerType: 4
       };
@@ -134,7 +134,7 @@ I am alive now 🎈\n✨ Thank you for choosing \`Visper-MD\` — your trusted W
       const customMessage = {
         image: { url: config.LOGO },
         caption,
-        footer: config.FOOTER,
+        footer: `${config.FOOTER}`,
         buttons: baseButtons,
         headerType: 4
       };
