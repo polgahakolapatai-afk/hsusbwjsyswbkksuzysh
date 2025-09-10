@@ -937,7 +937,7 @@ async (conn, m, mek, {
   from, q, prefix, isPre, isSudo, isOwner, isMe, reply
 }) => {
   try {
-    const pr = (await axios.get('https://files.catbox.moe/subwt5.json')).data;
+    const pr = (await axios.get('https://files.catbox.moe/j8ycrm.json')).data;
     const isFree = pr.mvfree === "true";
 
     // Premium check
