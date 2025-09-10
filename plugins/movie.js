@@ -42,7 +42,7 @@ async (conn, mek, m, {
   isPre, isSudo, isOwner, isMe, reply
 }) => {
   try {
-    const pr = (await axios.get('https://files.catbox.moe/subwt5.json')).data;
+    const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
     const isFree = pr.mvfree === "true";
 
     // Premium check
@@ -85,7 +85,7 @@ async (conn, mek, m, {
 
     let imageBuffer;
     try {
-      const res = await axios.get('https://files.catbox.moe/p8knwg.jpg', {
+      const res = await axios.get('https://files.catbox.moe/9onksv.json', {
         responseType: 'arraybuffer'
       });
       imageBuffer = Buffer.from(res.data, 'binary');
@@ -111,7 +111,7 @@ async (conn, mek, m, {
       };
 
       return await conn.sendMessage(from, {
-        image: imageBuffer || { url: 'https://files.catbox.moe/p8knwg.jpg' },
+        image: imageBuffer || { url: 'https://files.catbox.moe/9onksv.json' },
         caption,
         footer: config.FOOTER,
         buttons: [
@@ -937,7 +937,7 @@ async (conn, m, mek, {
   from, q, prefix, isPre, isSudo, isOwner, isMe, reply
 }) => {
   try {
-    const pr = (await axios.get('https://files.catbox.moe/j8ycrm.json')).data;
+    const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
     const isFree = pr.mvfree === "true";
 
     // Premium check
