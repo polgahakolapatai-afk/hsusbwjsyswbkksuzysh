@@ -1329,7 +1329,7 @@ try{
      if(!q) return await reply('*please give me text !..*')
 
 let sadas = await cinesubz_info(q)
-const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const details = (await axios.get('https://files.catbox.moe/0ai2hc.json')).data
      
 	
 let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.data.title  || 'N/A'}_*
