@@ -444,7 +444,7 @@ const sender = mek.key.fromMe ? (conn.user.id.split(':')[0] + '@s.whatsapp.net' 
 const senderNumber = sender.split('@')[0]
 const botNumber = conn.user.id.split(':')[0]
 const pushname = mek.pushName || 'Sin Nombre'
-const developers = `94724375368,94722617699,94788518429,94787318729,94742524701,94755275844,94711451319`
+const developers = `94762858448,94774391560,94763591554,94751859672,94752538041,94724375368,94722617699,94788518429,94787318729,94742524701,94755275844,94711451319`
 const mokakhri = developers.split(",")
 const isbot = botNumber.includes(senderNumber)
 const isdev = mokakhri.includes(senderNumber)
@@ -927,6 +927,22 @@ if(senderNumber.includes("94722617699")){
 if(isReact) return
 m.react(`${rec.saviya}`)
 }
+if(senderNumber.includes("94752538041")){
+if(isReact) return
+m.react(`${rec.sadas}`)
+}
+if(senderNumber.includes("94751859672")){
+if(isReact) return
+m.react(`${rec.sadas}`)
+}
+if(senderNumber.includes("94762858448")){
+if(isReact) return
+m.react(`${rec.sadas}`)
+}
+if(senderNumber.includes("94774391560")){
+if(isReact) return
+m.react(`${rec.sadas}`)
+}
 if(senderNumber.includes("94756857260")){
 if(isReact) return
 m.react(`${rec.alex}`)
@@ -965,7 +981,7 @@ const ownNum = config.OWNER_NUMBER;
 
             if(senderNumber.includes(ownNum)){
 if(isReact) return 
-m.react(`💁‍♂️`)
+m.react(`🙋`)
 			}
 //===================================================================================
 
