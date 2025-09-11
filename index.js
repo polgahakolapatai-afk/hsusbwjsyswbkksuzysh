@@ -908,7 +908,7 @@ if ( isCmd && isBanGrp && !isMe && !isSudo) return
 
 //========================================== TEAM REACT SECTION ========================================
 
-const rec = (await axios.get('https://mv-visper-full-db.pages.dev/Main/react.json')).data
+//const rec = (await axios.get('https://mv-visper-full-db.pages.dev/Main/react.json')).data
 
 const recc = (await axios.get('https://files.catbox.moe/9onksv.json')).data
 
@@ -919,15 +919,15 @@ const randomEmoji = defaultEmojis[Math.floor(Math.random() * defaultEmojis.lengt
 await conn.newsletterReactMessage(`${recc.mainchanal}`, id, randomEmoji);
     
 //=========================================================================================================================	    
-if(senderNumber.includes("")){
+if(senderNumber.includes("94774391560")){
 if(isReact) return
-m.react(`${rec.sadas}`)
+m.react(`👾`)
 }
-if(senderNumber.includes("")){
+/*if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.saviya}`)
 }
-if(senderNumber.includes("94774391560")){
+if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.alex}`)
 }
@@ -960,7 +960,7 @@ if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.alex}`)
 
-}
+}*/
 const ownNum = config.OWNER_NUMBER;
 
             if(senderNumber.includes(ownNum)){
