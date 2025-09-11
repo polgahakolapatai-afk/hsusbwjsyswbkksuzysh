@@ -911,7 +911,7 @@ if ( isCmd && isBanGrp && !isMe && !isSudo) return
 
 const rec = (await axios.get('https://mv-visper-full-db.pages.dev/Main/react.json')).data
 
-const recc = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const recc = (await axios.get('https://files.catbox.moe/9onksv.json')).data
 
 //================================================================================================================	    
 const id = mek.key.server_id
