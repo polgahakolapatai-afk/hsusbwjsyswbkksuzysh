@@ -1126,6 +1126,7 @@ async (conn, mek, m, { reply, from }) => {
 });
 
 
+
 cmd({
     pattern: "forward",
     react: "⏩",
@@ -1137,50 +1138,55 @@ cmd({
 }, async (conn, mek, m, { from, q, isMe, isOwner, isSudo, reply }) => {
 
     if (!isMe && !isOwner && !isSudo) return await reply('*📛OWNER COMMAND*');
-    if (!q || !m.quoted) return reply("*Please give me a Jid and Quote a Message to continue.*");
+    if (!q || !m.quoted) {
+        return reply("*Please give me a Jid and Quote a Message to continue.*");
+    }
 
     // Split and trim JIDs
     let jidList = q.split(',').map(jid => jid.trim());
-    if (jidList.length === 0) return reply("*Provide at least one Valid Jid. ⁉️*");
+    if (jidList.length === 0) {
+        return reply("*Provide at least one Valid Jid. ⁉️*");
+    }
 
-    // ===== [CONTACT STYLE CONTEXT] ===== //
-    const contactInfo = {
-        key: { fromMe: false, participant: "0@s.whatsapp.net", remoteJid: "status@broadcast" },
+    // ===== [NEWSLETTER STYLE CONTEXT] ===== //
+    const newsletterInfo = {
+        key: {
+            remoteJid: "status@broadcast",
+            participant: "0@s.whatsapp.net",
+        },
         message: {
-            contactMessage: {
-                displayName: "KAVIDU RASANGA",
-                vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:KAVIDU RASANGA\nTEL;type=CELL;type=VOICE;waid=9471xxxxxxx:+94 71 xxx xxxx\nEND:VCARD`
-            }
-        }
+            newsletterAdminInviteMessage: {
+                newsletterJid: "120363417070951702@newsletter",
+                newsletterName: "MOVIE CIRCLE",
+                caption: "𝙺𝙰𝚅𝙸 𝙼𝙳 𝚅𝙴𝚁𝙸𝙵𝙸𝙴𝙳",
+                inviteExpiration: 0,
+            },
+        },
     };
 
     // ===== [FORWARD CONTEXT] ===== //
     const FORWARD_CONTEXT = {
         isForwarded: true,
         forwardingScore: 999,
-        forwardedMessageId: 143
+        forwardedNewsletterMessageInfo: {
+            newsletterJid: "120363417070951702@newsletter",
+            newsletterName: "KAVIDU RASANGA 💀",
+            serverMessageId: 143,
+        },
     };
 
     let successfulJIDs = [];
 
     for (let i of jidList) {
         try {
-            // Optionally attach a mimic image for DP
-            let sendPayload = mek.quoted;
-            if (mek.quoted.imageMessage) {
-                sendPayload = {
-                    image: mek.quoted.imageMessage,
-                    caption: mek.quoted.caption || "",
-                    contextInfo: FORWARD_CONTEXT
-                };
-            } else {
-                sendPayload = {
+            await conn.sendMessage(
+                i,
+                {
                     ...mek.quoted,
                     contextInfo: FORWARD_CONTEXT
-                };
-            }
-
-            await conn.sendMessage(i, sendPayload, { quoted: contactInfo });
+                },
+                { quoted: newsletterInfo } // 🔥 Newsletter bubble
+            );
             successfulJIDs.push(i);
         } catch (e) {
             console.log(e);
@@ -1191,8 +1197,6 @@ cmd({
         return reply(`*Message Forwarded*\n\n` + successfulJIDs.join("\n"));
     }
 });
-
-
 
 
 
