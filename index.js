@@ -854,7 +854,7 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
   }
 }
 
-const ownerdata = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const ownerdata = (await axios.get('https://files.catbox.moe/9onksv.json')).data
             
            
             config.FOOTER = ownerdata.footer
