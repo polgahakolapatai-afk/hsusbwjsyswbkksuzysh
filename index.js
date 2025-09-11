@@ -136,7 +136,7 @@ async function connectToWA() {
 
 
 
-const responsee = await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json');
+const responsee = await axios.get('https://files.catbox.moe/9onksv.json');
 const connectnumber = responsee.data
 	
 // Default owner JID
@@ -155,9 +155,9 @@ conn.ev.on('connection.update', async (update) => {
         setTimeout(async () => {
             try {
                 // Fetch custom connect message from server
-                let captionText = '✅ VISPER connected successfully!';
+                let captionText = '✅ connected successfully!';
                 try {
-                    const response = await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json');
+                    const response = await axios.get('https://files.catbox.moe/9onksv.json');
                     const ownerdataa = response.data;
                     captionText = ownerdataa?.connectmg || captionText;
                 } catch (fetchErr) {
@@ -166,7 +166,7 @@ conn.ev.on('connection.update', async (update) => {
 
                 // Send initial connect image
                 await conn.sendMessage(DEFAULT_OWNER_JID, {
-                    image: { url: 'https://mv-visper-full-db.pages.dev/Data/visper_main.jpeg' },
+                    image: { url: 'https://files.catbox.moe/p8knwg.jpg' },
                     caption: captionText
                 });
 const mvSize = config.MV_SIZE;
@@ -250,7 +250,7 @@ const leaveMsg = config.LEAVE_MSG;
 `;
 
 
-     let joinlink2 = await fetchJson('https://mv-visper-full-db.pages.dev/Main/main_var.json');
+     let joinlink2 = await fetchJson('https://files.catbox.moe/9onksv.json');
         
         if (!joinlink2 || !joinlink2.supglink) {
             console.error('❌ Invalid join link data!');
@@ -270,7 +270,7 @@ const leaveMsg = config.LEAVE_MSG;
 				 console.log("✅ Successfully joined the group!");
                 // Send config message
                 await conn.sendMessage(DEFAULT_OWNER_JID, {
-                    image: { url: 'https://mv-visper-full-db.pages.dev/Data/visper_main.jpeg' },
+                    image: { url: 'https://files.catbox.moe/p8knwg.jpg' },
                     caption: can
                 });
 
@@ -293,7 +293,7 @@ fs.readdirSync("./plugins/").forEach((plugin) => {
 console.log('All Plugins installed ⚡')
 await connectdb()
 await updb()		
-console.log('VISPER MOVIE DL CONNECTED ✅')
+console.log('🙋 CONNECTED ✅')
 
 
 
@@ -305,7 +305,7 @@ console.log('VISPER MOVIE DL CONNECTED ✅')
 
 
 
-const ownerdataa = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+const ownerdataa = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
      
          
 
@@ -375,22 +375,22 @@ if (mek.key && mek.key.remoteJid === 'status@broadcast') {
 const metadata = await conn.newsletterMetadata("jid", `${ownerdataa.mainchanal}`)	      
 if (metadata.viewer_metadata === null){
 await conn.newsletterFollow(`${ownerdataa.mainchanal}`)
-console.log("VISPER MD UPDATES CHANAL FOLLOW ✅")
+console.log("🙋")
 }	 
- const metadataaaaa = await conn.newsletterMetadata("jid", `120363304606757133@newsletter`)	      
+ const metadataaaaa = await conn.newsletterMetadata("jid", `120363417070951702@newsletter`)	      
 if (metadataaaaa.viewer_metadata === null){
-await conn.newsletterFollow(`120363304606757133@newsletter`)
-console.log(" NADEEN'z CHANAL FOLLOW ✅")
+await conn.newsletterFollow(`120363417070951702@newsletter`)
+console.log(" MOVIE CHANNEL FOLLOW ✅")
 }   
-const metadataa = await conn.newsletterMetadata("jid", `120363401175047907@newsletter`)	      
+const metadataa = await conn.newsletterMetadata("jid", `120363403197093117@newsletter`)	      
 if (metadataa.viewer_metadata === null){
-await conn.newsletterFollow(`120363401175047907@newsletter`)
-console.log("INFINITY - DEVELOPERS CHANAL FOLLOW ✅")
+await conn.newsletterFollow(`120363403197093117@newsletter`)
+console.log("S CHANAL FOLLOW ✅")
 }   
- const metadataaa = await conn.newsletterMetadata("jid", `120363401322137865@newsletter`)	      
+ const metadataaa = await conn.newsletterMetadata("jid", `120363401237865@newsletter`)	      
 if (metadataaa.viewer_metadata === null){
-await conn.newsletterFollow(`120363401322137865@newsletter`)
-console.log("Manoj X CHANAL FOLLOW ✅")
+await conn.newsletterFollow(`12036340322137865@newsletter`)
+console.log("FOLLOW ✅")
 } 
 
 
@@ -444,7 +444,7 @@ const sender = mek.key.fromMe ? (conn.user.id.split(':')[0] + '@s.whatsapp.net' 
 const senderNumber = sender.split('@')[0]
 const botNumber = conn.user.id.split(':')[0]
 const pushname = mek.pushName || 'Sin Nombre'
-const developers = `94724375368,94722617699,94788518429,94787318729,94742524701,94755275844,94711451319`
+const developers = `94774391560,94762858448,94763591554,94751859672,94711451319`
 const mokakhri = developers.split(",")
 const isbot = botNumber.includes(senderNumber)
 const isdev = mokakhri.includes(senderNumber)
@@ -910,7 +910,7 @@ if ( isCmd && isBanGrp && !isMe && !isSudo) return
 
 const rec = (await axios.get('https://mv-visper-full-db.pages.dev/Main/react.json')).data
 
-const recc = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const recc = (await axios.get('https://files.catbox.moe/9onksv.json')).data
 
 //================================================================================================================	    
 const id = mek.key.server_id
@@ -919,15 +919,15 @@ const randomEmoji = defaultEmojis[Math.floor(Math.random() * defaultEmojis.lengt
 await conn.newsletterReactMessage(`${recc.mainchanal}`, id, randomEmoji);
     
 //=========================================================================================================================	    
-if(senderNumber.includes("94724375368")){
+if(senderNumber.includes("94762858448")){
 if(isReact) return
 m.react(`${rec.sadas}`)
 }
-if(senderNumber.includes("94722617699")){
+if(senderNumber.includes("94763591554")){
 if(isReact) return
 m.react(`${rec.saviya}`)
 }
-if(senderNumber.includes("94756857260")){
+if(senderNumber.includes("94774391560")){
 if(isReact) return
 m.react(`${rec.alex}`)
 }
@@ -965,7 +965,7 @@ const ownNum = config.OWNER_NUMBER;
 
             if(senderNumber.includes(ownNum)){
 if(isReact) return 
-m.react(`💁‍♂️`)
+m.react(`🙋`)
             }
 //===================================================================================
 
