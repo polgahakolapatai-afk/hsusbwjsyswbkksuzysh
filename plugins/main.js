@@ -367,7 +367,7 @@ I am *VISPER-MD* Userbot🎈
     const buttonMessage = {
       image: imageBuffer, // ✅ CORRECT format
       caption: captionn,
-      footer: config.FOOTER,
+      footer: config.FOTER,
       buttons,
       headerType: 4
     };
@@ -397,7 +397,7 @@ I am *VISPER-MD* Userbot🎈
       return await conn.sendMessage(from, {
         image: imageBuffer, // ✅ Again, direct Buffer
         caption,
-        footer: config.FOOTER,
+        footer: config.FOTER,
         buttons: [
           {
             buttonId: "action",
