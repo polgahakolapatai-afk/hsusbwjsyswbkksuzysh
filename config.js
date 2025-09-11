@@ -16,7 +16,7 @@ SUDO: '',//
 DB_NAME: 'pramaaaataaaaaaaaaajjaa',
 LANG: 'SI',
 OWNER_NUMBER: '94774391560',
-FOTER: '.....',
+FOTER: '*⎠👨‍💻 ᴋᴀᴠɪ ᴍᴅ ʙʏ ᴋᴀᴠɪᴅᴜ ʀᴀꜱᴀɴɢᴀ 👨‍💻⎝*',
 };
 //GITHUB_AUTH_TdOKEN: 'ouvnI0xSDsmfWA1filVxx.SZ0vJGYkjlC5VX54U0e10',
 
