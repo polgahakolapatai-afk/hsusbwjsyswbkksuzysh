@@ -21,4 +21,4 @@ MAX_SIZE: '1500',
 };
 //GITHUB_AUTH_TdOKEN: 'ouvnI0xSDsmfWA1filVxx.SZ0vJGYkjlC5VX54U0e10',
 
-//📌b
+//b
