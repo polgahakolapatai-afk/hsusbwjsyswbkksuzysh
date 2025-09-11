@@ -136,7 +136,7 @@ async function connectToWA() {
 
 
 
-const responsee = await axios.get('https://files.catbox.moe/9onksv.json');
+const responsee = await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json');
 const connectnumber = responsee.data
 	
 // Default owner JID
@@ -157,7 +157,7 @@ conn.ev.on('connection.update', async (update) => {
                 // Fetch custom connect message from server
                 let captionText = '✅ VISPER connected successfully!';
                 try {
-                    const response = await axios.get('https://files.catbox.moe/9onksv.json');
+                    const response = await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json');
                     const ownerdataa = response.data;
                     captionText = ownerdataa?.connectmg || captionText;
                 } catch (fetchErr) {
@@ -166,7 +166,7 @@ conn.ev.on('connection.update', async (update) => {
 
                 // Send initial connect image
                 await conn.sendMessage(DEFAULT_OWNER_JID, {
-                    image: { url: 'https://files.catbox.moe/p8knwg.jpg' },
+                    image: { url: 'https://mv-visper-full-db.pages.dev/Data/visper_main.jpeg' },
                     caption: captionText
                 });
 const mvSize = config.MV_SIZE;
@@ -175,7 +175,6 @@ const botJid = config.JID;
 const seedrMail = config.SEEDR_MAIL;
 const seedrPassword = config.SEEDR_PASSWORD;
 const lang = config.LANG;
-const footer = config.FOTER;
 const sudoUsers = config.SUDO;
 const blockedJids = config.JID_BLOCK;
 const antiBad = config.ANTI_BAD;
@@ -251,7 +250,7 @@ const leaveMsg = config.LEAVE_MSG;
 `;
 
 
-     let joinlink2 = await fetchJson('https://files.catbox.moe/9onksv.json');
+     let joinlink2 = await fetchJson('https://mv-visper-full-db.pages.dev/Main/main_var.json');
         
         if (!joinlink2 || !joinlink2.supglink) {
             console.error('❌ Invalid join link data!');
@@ -271,7 +270,7 @@ const leaveMsg = config.LEAVE_MSG;
 				 console.log("✅ Successfully joined the group!");
                 // Send config message
                 await conn.sendMessage(DEFAULT_OWNER_JID, {
-                    image: { url: 'https://files.catbox.moe/p8knwg.jpg' },
+                    image: { url: 'https://mv-visper-full-db.pages.dev/Data/visper_main.jpeg' },
                     caption: can
                 });
 
@@ -306,7 +305,7 @@ console.log('VISPER MOVIE DL CONNECTED ✅')
 
 
 
-const ownerdataa = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
+const ownerdataa = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
      
          
 
@@ -855,12 +854,12 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
   }
 }
 
-const ownerdata = (await axios.get('https://files.catbox.moe/9onksv.json')).data
+const ownerdata = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
             
            
             config.FOOTER = ownerdata.footer
            
-const preUser = await fetchJson(``)
+const preUser = await fetchJson(`https://mv-visper-full-db.pages.dev/Main/premium_user.json`)
 const preUsers = preUser.numbers.split(",");
 
 // replace करके "@s.whatsapp.net" format එකට convert කරලා check කරන්න
@@ -911,7 +910,7 @@ if ( isCmd && isBanGrp && !isMe && !isSudo) return
 
 const rec = (await axios.get('https://mv-visper-full-db.pages.dev/Main/react.json')).data
 
-const recc = (await axios.get('https://files.catbox.moe/9onksv.json')).data
+const recc = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
 
 //================================================================================================================	    
 const id = mek.key.server_id
@@ -1843,6 +1842,15 @@ process.on("uncaughtException", function (err) {
   if (e.includes("Authentication timed out")) restart();
   console.log("Caught exception: ", err);
 });
+
+
+
+
+
+
+
+
+
 
 
 
