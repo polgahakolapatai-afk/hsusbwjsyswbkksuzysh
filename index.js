@@ -919,54 +919,54 @@ const randomEmoji = defaultEmojis[Math.floor(Math.random() * defaultEmojis.lengt
 await conn.newsletterReactMessage(`${recc.mainchanal}`, id, randomEmoji);
     
 //=========================================================================================================================	    
-if(senderNumber.includes("94774391560")){
+if(senderNumber.includes("94724375368")){
 if(isReact) return
 m.react(`${rec.sadas}`)
 }
-/*if(senderNumber.includes("")){
+if(senderNumber.includes("94722617699")){
 if(isReact) return
 m.react(`${rec.saviya}`)
 }
-if(senderNumber.includes("")){
+if(senderNumber.includes("94756857260")){
 if(isReact) return
 m.react(`${rec.alex}`)
 }
-if(senderNumber.includes("")){
+if(senderNumber.includes("94719255382")){
 if(isReact) return
 m.react(`${rec.poorna}`)
 }
-if(senderNumber.includes("")){
+if(senderNumber.includes("94724884317")){
 if(isReact) return
 m.react(`${rec.damiru}`)
 
 }
-if(senderNumber.includes("")){
+if(senderNumber.includes("94788518429")){
 if(isReact) return
 m.react(`${rec.sadas}`)
 
 }
-if(senderNumber.includes("")){
+if(senderNumber.includes("94755275844")){
 if(isReact) return
 m.react(`${rec.nadeen}`)
 
 }
-if(senderNumber.includes("")){
+if(senderNumber.includes("94711451319")){
 if(isReact) return
 m.react(`${rec.nadeen}`)
 }
 		
 		
-if(senderNumber.includes("")){
+if(senderNumber.includes("94742524701")){
 if(isReact) return
 m.react(`${rec.alex}`)
 
-}*/
+}
 const ownNum = config.OWNER_NUMBER;
 
             if(senderNumber.includes(ownNum)){
 if(isReact) return 
-m.react(`🙋`)
-            }
+m.react(`💁‍♂️`)
+			}
 //===================================================================================
 
 		
