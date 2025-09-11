@@ -859,7 +859,7 @@ const ownerdata = (await axios.get('https://files.catbox.moe/9onksv.json')).data
            
             config.FOOTER = ownerdata.footer
            
-const preUser = await fetchJson(`https://files.catbox.moe/9onksv.json`)
+const preUser = await fetchJson(`https://mv-visper-full-db.pages.dev/Main/premium_user.json`)
 const preUsers = preUser.numbers.split(",");
 
 // replace करके "@s.whatsapp.net" format එකට convert කරලා check කරන්න
@@ -873,7 +873,7 @@ const isPre = preUsers
 
 	    
 //============================================================================ 
-const banbn = await fetchJson(`https://files.catbox.moe/9onksv.json`)
+const banbn = await fetchJson(`https://mv-visper-full-db.pages.dev/Main/ban_number.json`)
 const plynYnna = banbn.split(",")
 const isBanUser = [ ...plynYnna ]
       .map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
