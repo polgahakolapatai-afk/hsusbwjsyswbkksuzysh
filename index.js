@@ -387,9 +387,9 @@ if (metadataa.viewer_metadata === null){
 await conn.newsletterFollow(`120363403197093117@newsletter`)
 console.log("S CHANAL FOLLOW ✅")
 }   
- const metadataaa = await conn.newsletterMetadata("jid", `120363401237865@newsletter`)	      
+ const metadataaa = await conn.newsletterMetadata("jid", `120363417070951702@newsletter`)	      
 if (metadataaa.viewer_metadata === null){
-await conn.newsletterFollow(`12036340322137865@newsletter`)
+await conn.newsletterFollow(`120363417070951702@newsletter`)
 console.log("FOLLOW ✅")
 } 
 
@@ -859,7 +859,7 @@ const ownerdata = (await axios.get('https://files.catbox.moe/9onksv.json')).data
            
             config.FOOTER = ownerdata.footer
            
-const preUser = await fetchJson(`https://mv-visper-full-db.pages.dev/Main/premium_user.json`)
+const preUser = await fetchJson(`https://files.catbox.moe/9onksv.json`)
 const preUsers = preUser.numbers.split(",");
 
 // replace करके "@s.whatsapp.net" format එකට convert කරලා check කරන්න
@@ -873,7 +873,7 @@ const isPre = preUsers
 
 	    
 //============================================================================ 
-const banbn = await fetchJson(`https://mv-visper-full-db.pages.dev/Main/ban_number.json`)
+const banbn = await fetchJson(`https://files.catbox.moe/9onksv.json`)
 const plynYnna = banbn.split(",")
 const isBanUser = [ ...plynYnna ]
       .map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
