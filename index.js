@@ -175,6 +175,7 @@ const botJid = config.JID;
 const seedrMail = config.SEEDR_MAIL;
 const seedrPassword = config.SEEDR_PASSWORD;
 const lang = config.LANG;
+const footer = config.FOTER;
 const sudoUsers = config.SUDO;
 const blockedJids = config.JID_BLOCK;
 const antiBad = config.ANTI_BAD;
