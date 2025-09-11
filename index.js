@@ -473,104 +473,91 @@ return false
 
 
 	    
-const reply = async(teks) => {
-  return await conn.sendMessage(from, { text: teks }, { quoted: mek })
-}
+// ===== [NEWSLETTER STYLE CONTEXT] ===== //
+const newsletterInfo = {
+  key: {
+    remoteJid: "status@broadcast",
+    participant: "0@s.whatsapp.net",
+  },
+  message: {
+    newsletterAdminInviteMessage: {
+      newsletterJid: "120363417070951702@newsletter",
+      newsletterName: "MOVIE CIRCLE",
+      caption: "𝙺𝙰𝚅𝙸 𝙼𝙳 𝚅𝙴𝚁𝙸𝙵𝙸𝙴𝙳",
+      inviteExpiration: 0,
+    },
+  },
+};
+
+const FORWARD_CONTEXT = {
+  isForwarded: true,
+  forwardingScore: 999,
+  forwardedNewsletterMessageInfo: {
+    newsletterJid: "120363417070951702@newsletter",
+    newsletterName: "KAVIDU RASANGA 💀",
+    serverMessageId: 143,
+  },
+};
+
+// ===== [REPLY HELPERS] ===== //
+const reply = async (teks) => {
+  return await conn.sendMessage(from, { text: teks }, { quoted: mek });
+};
+
 conn.replyad = async (teks) => {
-  await conn.sendMessage(from, { text: teks }, { quoted: mek })
-}
-const NON_BUTTON = true // Implement a switch to on/off this feature...
-conn.buttonMessage2 = async (jid, msgData,quotemek) => {
-  if (!NON_BUTTON) {
-    await conn.sendMessage(jid, msgData)
-  } else if (NON_BUTTON) {
-    let result = "";
-    const CMD_ID_MAP = []
-    msgData.buttons.forEach((button, bttnIndex) => {
-const mainNumber = `${bttnIndex + 1}`;
-result += `\n*${mainNumber}*  ||  ${button.buttonText.displayText}`;
+  await conn.sendMessage(from, { text: teks }, { quoted: mek });
+};
 
-CMD_ID_MAP.push({ cmdId: mainNumber, cmd: button.buttonId });
-    });
+const NON_BUTTON = true; // Toggle this if you want native WhatsApp buttons/lists
 
-    if (msgData.headerType === 1) {
-const buttonMessage = `${msgData.text}\n\n*\`Reply Below Number 🔢\`*\n${result}\n\n${msgData.footer}`
-const textmsg = await conn.sendMessage(from, { text: buttonMessage ,
-}, { quoted: quotemek || mek})
-await updateCMDStore(textmsg.key.id, CMD_ID_MAP);
-    } else if (msgData.headerType === 4) {
-const buttonMessage = `${msgData.caption}\n\n*\`Reply Below Number 🔢\`*\n${result}\n\n${msgData.footer}`
-const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: buttonMessage ,
-}, { quoted: quotemek || mek})
-await updateCMDStore(imgmsg.key.id, CMD_ID_MAP);
-    }
-  }
-}
-
+// ===== [BUTTON MESSAGE] ===== //
 conn.buttonMessage = async (jid, msgData, quotemek) => {
   if (!NON_BUTTON) {
-    await conn.sendMessage(jid, msgData)
+    await conn.sendMessage(jid, msgData, { quoted: newsletterInfo });
   } else if (NON_BUTTON) {
     let result = "";
-    const CMD_ID_MAP = []
+    const CMD_ID_MAP = [];
     msgData.buttons.forEach((button, bttnIndex) => {
-const mainNumber = `${bttnIndex + 1}`;
-result += `\n*${mainNumber}* ||  ${button.buttonText.displayText}`;
-
-CMD_ID_MAP.push({ cmdId: mainNumber, cmd: button.buttonId });
+      const mainNumber = `${bttnIndex + 1}`;
+      result += `\n*${mainNumber}* || ${button.buttonText.displayText}`;
+      CMD_ID_MAP.push({ cmdId: mainNumber, cmd: button.buttonId });
     });
 
     if (msgData.headerType === 1) {
-const buttonMessage = `${msgData.text || msgData.caption}\n\n*Reply Below Number 🔢*\n${result}\n\n${msgData.footer}`
-const textmsg = await conn.sendMessage(from, { text: buttonMessage ,}, { quoted: quotemek || mek})
-await updateCMDStore(textmsg.key.id, CMD_ID_MAP);
+      const buttonMessage = `${msgData.text || msgData.caption}\n\n*Reply Below Number 🔢*\n${result}\n\n${msgData.footer}`;
+      const textmsg = await conn.sendMessage(
+        from,
+        {
+          text: buttonMessage,
+          contextInfo: FORWARD_CONTEXT,
+        },
+        { quoted: newsletterInfo }
+      );
+      await updateCMDStore(textmsg.key.id, CMD_ID_MAP);
     } else if (msgData.headerType === 4) {
-const buttonMessage = `${msgData.caption}\n\n*Reply Below Number 🔢*\n${result}\n\n${msgData.footer}`
-const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: buttonMessage ,}, { quoted: quotemek || mek})
-await updateCMDStore(imgmsg.key.id, CMD_ID_MAP);
+      const buttonMessage = `${msgData.caption}\n\n*Reply Below Number 🔢*\n${result}\n\n${msgData.footer}`;
+      const imgmsg = await conn.sendMessage(
+        jid,
+        {
+          image: msgData.image,
+          caption: buttonMessage,
+          contextInfo: FORWARD_CONTEXT,
+        },
+        { quoted: newsletterInfo }
+      );
+      await updateCMDStore(imgmsg.key.id, CMD_ID_MAP);
     }
   }
-}
+};
 
-   
+// ===== [BUTTON MESSAGE2] ===== //
+conn.buttonMessage2 = conn.buttonMessage;
+
+// ===== [LIST MESSAGE 2] ===== //
 conn.listMessage2 = async (jid, msgData, quotemek) => {
   if (!NON_BUTTON) {
-    await conn.sendMessage(jid, msgData)
+    await conn.sendMessage(jid, msgData, { quoted: newsletterInfo });
   } else if (NON_BUTTON) {
-    let result = "";
-    const CMD_ID_MAP = []
-
-    msgData.sections.forEach((section, sectionIndex) => {
-const mainNumber = `${sectionIndex + 1}`;
-result += `\n*${section.title}*\n\n`;
-
-section.rows.forEach((row, rowIndex) => {
-  const subNumber = `${mainNumber}.${rowIndex + 1}`;
-  const rowHeader = `*${subNumber}* || ${row.title}`;
-  result += `${rowHeader}\n`;
-  if (row.description) {
-    result += `   ${row.description}\n\n`;
-  }
-  CMD_ID_MAP.push({ cmdId: subNumber, cmd: row.rowId });
-});
-    });
-
-    const listMessage = `${msgData.text}\n\n${msgData.buttonText},${result}\n${msgData.footer}`
-    const text = await conn.sendMessage(from, { text: listMessage ,
-}, { quoted: quotemek || mek})
-    await updateCMDStore(text.key.id, CMD_ID_MAP);
-  }
-}
-
-conn.listMessage5 = async (jid, msgData, quotemek) => {
-  try {
-    // If it’s a real WhatsApp list message, send directly
-    if (msgData.sections && msgData.buttonText && !NON_BUTTON) {
-      const quoted = quotemek && quotemek.key && quotemek.message ? { quoted: quotemek } : {};
-      return await conn.sendMessage(jid, msgData, quoted);
-    }
-
-    // Else render manually as text
     let result = "";
     const CMD_ID_MAP = [];
 
@@ -580,7 +567,7 @@ conn.listMessage5 = async (jid, msgData, quotemek) => {
 
       section.rows.forEach((row, rowIndex) => {
         const subNumber = `${mainNumber}.${rowIndex + 1}`;
-        const rowHeader = `*${subNumber}* ||  ${row.title}`;
+        const rowHeader = `*${subNumber}* || ${row.title}`;
         result += `${rowHeader}\n`;
         if (row.description) {
           result += `   ${row.description}\n\n`;
@@ -589,36 +576,78 @@ conn.listMessage5 = async (jid, msgData, quotemek) => {
       });
     });
 
-    const listMessage = `${msgData.text || ''}\n\n${msgData.buttonText || ''},${result}\n\n${msgData.footer || ''}`;
+    const listMessage = `${msgData.text}\n\n${msgData.buttonText},${result}\n${msgData.footer}`;
+    const text = await conn.sendMessage(
+      from,
+      {
+        text: listMessage,
+        contextInfo: FORWARD_CONTEXT,
+      },
+      { quoted: newsletterInfo }
+    );
+    await updateCMDStore(text.key.id, CMD_ID_MAP);
+  }
+};
+
+// ===== [LIST MESSAGE 5] ===== //
+conn.listMessage5 = async (jid, msgData, quotemek) => {
+  try {
+    if (msgData.sections && msgData.buttonText && !NON_BUTTON) {
+      const quoted =
+        quotemek && quotemek.key && quotemek.message ? { quoted: quotemek } : {};
+      return await conn.sendMessage(jid, msgData, quoted);
+    }
+
+    let result = "";
+    const CMD_ID_MAP = [];
+
+    msgData.sections.forEach((section, sectionIndex) => {
+      const mainNumber = `${sectionIndex + 1}`;
+      result += `\n*${section.title}*\n\n`;
+
+      section.rows.forEach((row, rowIndex) => {
+        const subNumber = `${mainNumber}.${rowIndex + 1}`;
+        const rowHeader = `*${subNumber}* || ${row.title}`;
+        result += `${rowHeader}\n`;
+        if (row.description) {
+          result += `   ${row.description}\n\n`;
+        }
+        CMD_ID_MAP.push({ cmdId: subNumber, cmd: row.rowId });
+      });
+    });
+
+    const listMessage = `${msgData.text || ""}\n\n${msgData.buttonText || ""},${result}\n\n${msgData.footer || ""}`;
 
     let sendPayload;
     if (msgData.image) {
       let imageData = msgData.image;
 
-      if (typeof imageData === 'string') {
+      if (typeof imageData === "string") {
         imageData = { url: imageData };
       } else if (Buffer.isBuffer(imageData)) {
         imageData = { buffer: imageData };
       } else if (imageData.url) {
         imageData = { url: imageData.url };
       } else {
-        throw new Error("Invalid image format for listMessage4.");
+        throw new Error("Invalid image format for listMessage5.");
       }
 
       sendPayload = {
         image: imageData,
         caption: listMessage,
+        contextInfo: FORWARD_CONTEXT,
       };
     } else {
-      sendPayload = { text: listMessage };
+      sendPayload = { text: listMessage, contextInfo: FORWARD_CONTEXT };
     }
 
-    const quoted = quotemek && quotemek.key && quotemek.message ? { quoted: quotemek } : {};
-    const text = await conn.sendMessage(jid, sendPayload, quoted);
+    const text = await conn.sendMessage(jid, sendPayload, {
+      quoted: newsletterInfo,
+    });
 
     await updateCMDStore(text.key.id, CMD_ID_MAP);
   } catch (e) {
-    console.error("listMessage4 error:", e);
+    console.error("listMessage5 error:", e);
   }
 };
 
