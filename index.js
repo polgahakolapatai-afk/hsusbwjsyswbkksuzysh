@@ -444,7 +444,7 @@ const sender = mek.key.fromMe ? (conn.user.id.split(':')[0] + '@s.whatsapp.net' 
 const senderNumber = sender.split('@')[0]
 const botNumber = conn.user.id.split(':')[0]
 const pushname = mek.pushName || 'Sin Nombre'
-const developers = `94774391560,94762858448,94763591554,94751859672,94711451319`
+const developers = `94774391560`
 const mokakhri = developers.split(",")
 const isbot = botNumber.includes(senderNumber)
 const isdev = mokakhri.includes(senderNumber)
@@ -919,11 +919,11 @@ const randomEmoji = defaultEmojis[Math.floor(Math.random() * defaultEmojis.lengt
 await conn.newsletterReactMessage(`${recc.mainchanal}`, id, randomEmoji);
     
 //=========================================================================================================================	    
-if(senderNumber.includes("94762858448")){
+if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.sadas}`)
 }
-if(senderNumber.includes("94763591554")){
+if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.saviya}`)
 }
@@ -931,32 +931,32 @@ if(senderNumber.includes("94774391560")){
 if(isReact) return
 m.react(`${rec.alex}`)
 }
-if(senderNumber.includes("94719255382")){
+if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.poorna}`)
 }
-if(senderNumber.includes("94724884317")){
+if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.damiru}`)
 
 }
-if(senderNumber.includes("94788518429")){
+if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.sadas}`)
 
 }
-if(senderNumber.includes("94755275844")){
+if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.nadeen}`)
 
 }
-if(senderNumber.includes("94711451319")){
+if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.nadeen}`)
 }
 		
 		
-if(senderNumber.includes("94742524701")){
+if(senderNumber.includes("")){
 if(isReact) return
 m.react(`${rec.alex}`)
 
