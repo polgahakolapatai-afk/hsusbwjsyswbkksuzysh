@@ -68,7 +68,7 @@ const number = conn.user.id.split(':')[0].replace(/@s\.whatsapp\.net$/, '');
 
     // ALIVE: Default Mode
     if (config.ALIVE === "default") {
-      const details = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
+      const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
 
       const defaultMessage = {
         image: { url: config.LOGO },
@@ -94,9 +94,9 @@ I am alive now 🎈\n✨ Thank you for choosing \`Visper-MD\` — your trusted W
 *🔗 Official Links:*  
 • *📂 GitHub Repository:* ${details.reponame}  
 • *📢 WhatsApp Channel:* ${details.chlink}   
-*💛 Thank you for trusting VISPER-MD!*
-${details.footer}`,
 
+*💛 Thank you for trusting VISPER-MD!*`,
+        footer: config.FOOTER,
         buttons: baseButtons,
         headerType: 4
       };
@@ -113,7 +113,7 @@ ${details.footer}`,
         {
           image: { url: config.LOGO },
           caption,
-          footer: `${details.footer}`,
+          footer: config.FOOTER,
           buttons: [
             {
               buttonId: "video_quality_list",
@@ -134,7 +134,7 @@ ${details.footer}`,
       const customMessage = {
         image: { url: config.LOGO },
         caption,
-        footer: `${details.footer}`,
+        footer: config.FOOTER,
         buttons: baseButtons,
         headerType: 4
       };
@@ -367,7 +367,7 @@ I am *VISPER-MD* Userbot🎈
     const buttonMessage = {
       image: imageBuffer, // ✅ CORRECT format
       caption: captionn,
-      footer: config.FOTER,
+      footer: config.FOOTER,
       buttons,
       headerType: 4
     };
@@ -397,7 +397,7 @@ I am *VISPER-MD* Userbot🎈
       return await conn.sendMessage(from, {
         image: imageBuffer, // ✅ Again, direct Buffer
         caption,
-        footer: config.FOTER,
+        footer: config.FOOTER,
         buttons: [
           {
             buttonId: "action",
