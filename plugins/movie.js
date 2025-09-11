@@ -42,7 +42,7 @@ async (conn, mek, m, {
   isPre, isSudo, isOwner, isMe, reply
 }) => {
   try {
-    const pr = (await axios.get('https://files.catbox.moe/subwt5.json')).data;
+    const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
     const isFree = pr.mvfree === "true";
 
     // Premium check
@@ -113,7 +113,7 @@ async (conn, mek, m, {
       return await conn.sendMessage(from, {
         image: imageBuffer || { url: 'https://files.catbox.moe/p8knwg.jpg' },
         caption,
-        footer: config.FOOTER,
+        footer: config.FOTER,
         buttons: [
           {
             buttonId: "movie_menu_list",
@@ -140,7 +140,7 @@ async (conn, mek, m, {
       return await conn.buttonMessage2(from, {
         image: { url: 'https://files.catbox.moe/p8knwg.jpg' },
         caption,
-        footer: config.FOOTER,
+        footer: config.FOTER,
         buttons,
         headerType: 4
       }, mek);
@@ -170,7 +170,7 @@ async (conn, mek, m, {
   isPre, isSudo, isOwner, isMe, reply
 }) => {
   try {
-    const pr = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+    const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
     const isFree = pr.mvfree === "true";
 
     // Premium check
@@ -259,7 +259,7 @@ async (conn, mek, m, {
       return await conn.buttonMessage2(from, {
         image: { url: config.LOGO },
         caption,
-        footer: config.FOOTER,
+        footer: config.FOTER,
         buttons,
         headerType: 4
       }, mek);
@@ -287,7 +287,7 @@ alias: ["cinesubz"],
 },
 async (conn, m, mek, { from, q, prefix, isSudo, isOwner, isPre, isMe, reply }) => {
 try{
-const pr = (await axios.get('https://files.catbox.moe/subwt5.json')).data;
+const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
 
 // convert string to boolean
 const isFree = pr.mvfree === "true";
@@ -375,7 +375,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: config.LOGO },
     caption: caption,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 
 	    
@@ -494,7 +494,7 @@ const y = `${url.dllink}`;
                     await conn.sendMessage(config.JID || from, {
                         document: fileBuffer,
                         mimetype: "video/mp4",
-                        fileName: `${title}.mp4`,
+                        fileName: `🎬KAVI-MD🎬 ${title}.mp4`,
                       
                         caption: `*🎬 Name :* ${title}\n\n${config.NAME}`
                     });
@@ -533,7 +533,7 @@ async (conn, m, mek, { from, isPre, q, prefix, isMe,isSudo, isOwner, reply }) =>
 try{
 
 
-const pr = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
 
 // convert string to boolean
 const isFree = pr.mvfree === "true";
@@ -632,7 +632,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: config.LOGO },
     caption: caption,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 
 	    
@@ -718,7 +718,7 @@ const buttonMessage = {
  
 image: {url: im.replace("-150x150", "") },	
   caption: msg,
-  footer: config.FOOTER,
+  footer: config.FOTER,
   buttons: rows,
   headerType: 4
 }
@@ -754,7 +754,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: im.replace("-150x150", "") },
     caption: msg,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 {
             buttonId: prefix + `bdetails ${urll}&${im}`,
@@ -857,10 +857,10 @@ if (!sadas.data.dl_link || !sadas.data.dl_link.includes('https://drive.baiscopes
        
  await conn.sendMessage(config.JID || from, { 
             document: { url: mediaUrl },
-            caption: `*🎬 Name :* ${dat}\n\n${config.NAME}\n\n*Download Withing 7 Days 🪄`,
+            caption: `*🎬 Name :* ${dat}\n\n${config.NAME}`,
             mimetype: "video/mp4",
             jpegThumbnail: await (await fetch(botimg)).buffer(),
-            fileName: `${dat}.mp4`
+            fileName: `🎬KAVI-MD🎬 ${dat}.mp4`
         });
 
 
@@ -893,19 +893,19 @@ async (conn, m, mek, { from, q, isMe, reply }) => {
       return await reply('❌ *Invalid format! Example:*\n_bdetails https://movieurl.com&https://imageurl.com_');
 
     let sadas = await fetchJson(`https://darksadas-yt-baiscope-info.vercel.app/?url=${url}&apikey=pramashi`);
-    let details = (await axios.get('https://files.catbox.moe/subwt5.json')).data;
+    let details = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
 
     // Formatted message with emojis and bold Unicode fonts
     let msg = `*🩸 Title:-* *_${sadas.data.title   || 'N/A'}_*
 
-*Release Date:-* _${sadas.data.date   || 'N/A'}_
-*💃 𝗥ᴀᴛɪɴɢ ➮* _${sadas.data.imdb  || 'N/A'}_
-*⏰ 𝗥ᴜɴᴛɪᴍᴇ ➮* _${sadas.data.runtime   || 'N/A'}_
-*💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.data.subtitle_author   || 'N/A'}_
-*🎭 𝗚ᴇɴᴀʀᴇꜱ ➮* ${sadas.data.genres.join(', ')   || 'N/A'}
+*📆 Release Date:-* _${sadas.data.date   || 'N/A'}_
+*🌟 Rating:-* _${sadas.data.imdb  || 'N/A'}_
+*⏳ Run Time:-* _${sadas.data.runtime   || 'N/A'}_
+*🙋 Sub By:-* _${sadas.data.subtitle_author   || 'N/A'}_
+*🪄 Genares:-* ${sadas.data.genres.join(', ')   || 'N/A'}
 
 
-✨ *Follow us:* ${details.chlink}`;
+*📌 Follow Movie:- ${details.chlink}`;
 
     await conn.sendMessage(config.JID || from, {
       image: { url: imgUrl.replace("-150x150", "") },
@@ -937,7 +937,7 @@ async (conn, m, mek, {
   from, q, prefix, isPre, isSudo, isOwner, isMe, reply
 }) => {
   try {
-    const pr = (await axios.get('https://files.catbox.moe/subwt5.json')).data;
+    const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
     const isFree = pr.mvfree === "true";
 
     // Premium check
@@ -989,7 +989,7 @@ const listMessage = {
 text: `_*CINESUBZ MOVIE SEARCH RESULTS 🎬*_
 
 *\`Input :\`* ${q}`,
-footer: config.FOOTER,
+footer: config.FOTER,
 title: 'cinesubz.co results',
 buttonText: '*Reply Below Number 🔢*',
 sections
@@ -1029,7 +1029,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: config.LOGO },
     caption: caption,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 
 	    
@@ -1082,7 +1082,7 @@ let msg = `*🩸 Title:-* *_${sadas.data.title  || 'N/A'}_*
 *🌎 Country:-* _${sadas.data.country  || 'N/A'}_
 *🌟 Rating:-* _${sadas.data.imdb  || 'N/A'}_
 *⏰ Run Time:-* _${sadas.data.runtime  || 'N/A'}_
-*🙋Sub By:-* _${sadas.data.subtitle_author  || 'N/A'}_
+*🙋 Sub By:-* _${sadas.data.subtitle_author  || 'N/A'}_
 *♨️ Genaras:-* ${sadas.data.genres.join(', ')  || 'N/A'}
 `
 
@@ -1133,7 +1133,7 @@ const buttonMessage = {
  
 image: {url: sadas.data.image.replace(/-\d+x\d+(?=\.jpg)/, '')},	
   caption: msg,
-  footer: config.FOOTER,
+  footer: config.FOTER,
   buttons: rows,
   headerType: 4
 }
@@ -1170,7 +1170,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: sadas.data.image.replace(/-\d+x\d+(?=\.jpg)/, '') },
     caption: msg,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 {
             buttonId: prefix + 'ctdetails ' + q,
@@ -1276,10 +1276,10 @@ cmd({
             // 🔹 Send document
             await conn.sendMessage(config.JID || from, { 
                 document: { url: mediaUrl },
-                caption: `*🎬 Name :* ${dat}\n\n${config.NAME}\n\n*Download Withing 7 Days 🪄*`,
+                caption: `*🎬 Name :* ${dat}\n\n${config.NAME}`,
                 mimetype: "video/mp4",
                 jpegThumbnail: await (await fetch(botimg)).buffer(),
-                fileName: `${dat}.mp4`
+                fileName: `🎬KAVI-MD🎬 ${dat}.mp4`
             });
 
             await conn.sendMessage(from, { delete: up_mg.key });
@@ -1365,7 +1365,7 @@ async (conn, m, mek, { from, q, prefix, isMe, isPre, isSudo, isOwner, reply }) =
     try {
 
 
-const pr = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
 
 // convert string to boolean
 const isFree = pr.mvfree === "true";
@@ -1427,7 +1427,7 @@ if (!isFree && !isMe && !isPre) {
             text: `_*🎬PUPILVIDEO MOVIE SEARCH RESULTS 🎬*_
 
 *Movie Search : ${q} 🔎*`,
-            footer: config.FOOTER,
+            footer: config.FOTER,
             title: 'Search Results 🎬',
             buttonText: '*Reply Below Number 🔢*',
             sections
@@ -1466,7 +1466,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: config.LOGO },
     caption: caption,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 
 	    
@@ -1505,10 +1505,10 @@ try{
 
  if(!q) return await reply('*please give me text !..*')
 let sadas = await fetchJson(`https://darksadasyt-new-mv-site-info.vercel.app/?url=${q}`)
-let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮*  _${sadas.title  || 'N/A'}_
+let msg = `*🩸 Title*  _${sadas.title  || 'N/A'}_
 
-*📅 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮*  _${sadas.date  || 'N/A'}_
-*💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.subtitle_author  || 'N/A'}_`
+*📅 Release Date*  _${sadas.date  || 'N/A'}_
+*💁‍♂️ Sub By* _${sadas.subtitle_author  || 'N/A'}_`
 
 if (sadas.downloadLinks.length < 1) return await conn.sendMessage(from, { text: 'erro !' }, { quoted: mek } )
 
@@ -1537,7 +1537,7 @@ const buttonMessage = {
  
 image: {url: sadas.image },	
   caption: msg,
-  footer: config.FOOTER,
+  footer: config.FOTER,
   buttons: rows,
   headerType: 4
 }
@@ -1574,7 +1574,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: sadas.image},
     caption: msg,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 {
             buttonId: prefix + 'dubdet ' + q,
@@ -1697,17 +1697,17 @@ try{
 
 
 let sadas = await fetchJson(`https://darksadasyt-new-mv-site-info.vercel.app/?url=${q}`)
-const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const details = (await axios.get('https://files.catbox.moe/9onksv.json')).data
      
 	
-let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮*  _${sadas.title  || 'N/A'}_
+let msg = `*🩸 𝗧ɪᴛʟᴇ ➮*  _${sadas.title  || 'N/A'}_
 
-*📅 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮*  _${sadas.date  || 'N/A'}_
-*💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.subtitle_author  || 'N/A'}_
+*📆 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮*  _${sadas.date  || 'N/A'}_
+*🙋 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.subtitle_author  || 'N/A'}_
 
-> 🌟 Follow us : *${details.chlink}*
+> 🫟 Follow Movie:- ${details.chlink}
 
-> _*VISPER MD MULTIDEVICE*_
+> _*🌟 KAVI MULTIDEVICE*_
 `
 await conn.sendMessage(config.JID || from, { image: { url: sadas.image }, caption: msg })
 
@@ -1756,7 +1756,7 @@ async (conn, m, mek, { from, q, prefix, isMe, isSudo, isPre, isOwner, reply }) =
 try{
 
 
-const pr = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
 
 // convert string to boolean
 const isFree = pr.mvfree === "true";
@@ -1818,7 +1818,7 @@ const listMessage = {
 text: `_*CINESUBZ TV SHOWS RESULTS 📺*_
 
 *\`Input :\`* ${q}`,
-footer: config.FOOTER,
+footer: config.FOTER,
 title: 'cinesubz.co results',
 buttonText: '*Reply Below Number 🔢*',
 sections
@@ -1856,7 +1856,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: config.LOGO },
     caption: caption,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 
 	    
@@ -1897,14 +1897,14 @@ if (!q || !q.includes('https://cinesubz.net/tvshows')) {
 }
 
 let sadas = await cinesubz_tvshow_info(q)
-let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.data.title || 'N/A'}_*
+let msg = `*🩸 Title:-* *_${sadas.data.title || 'N/A'}_*
 
-*📅 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮* _${sadas.data.date || 'N/A'}_
-*🌎 𝗖ᴏᴜɴᴛʀʏ ➮* _${sadas.data.country || 'N/A'}_
-*💃 𝗥ᴀᴛɪɴɢ ➮* _${sadas.data.imdb || 'N/A'}_
-*⏰ 𝗥ᴜɴᴛɪᴍᴇ ➮* _${sadas.data.runtime || 'N/A'}_
-*💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.data.director || 'N/A'}_
-*🎭 𝗚ᴇɴᴀʀᴇꜱ ➮* ${sadas.data.category.join(', ') || 'N/A'}
+*📅 Release Date:-* _${sadas.data.date || 'N/A'}_
+*🌎 Country:-* _${sadas.data.country || 'N/A'}_
+*🌟 Rating:-* _${sadas.data.imdb || 'N/A'}_
+*⏰ Run Time:-* _${sadas.data.runtime || 'N/A'}_
+*🙋 Sub By:-* _${sadas.data.director || 'N/A'}_
+*🪄 Genares:-* ${sadas.data.category.join(', ') || 'N/A'}
 `
 
  
@@ -1936,7 +1936,7 @@ const buttonMessage = {
  
 image: {url: sadas.data.mainImage.replace("-200x300", "")},	
   caption: msg,
-  footer: config.FOOTER,
+  footer: config.FOTER,
   buttons: rows,
   headerType: 4
 }
@@ -1969,7 +1969,7 @@ const listButtons = {
       await conn.sendMessage(from, {
     image: { url: sadas.data.mainImage.replace("-200x300", "")},
     caption: msg,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 {
             buttonId: prefix + 'ctdetailss ' + q,
@@ -2040,13 +2040,13 @@ cmd({
       rows
     }];
 
-    const caption = `*🍿 Episode Title:* ${title}_*_\n\n*🔢 Choose a quality from the list below:*`;
+    const caption = `*🎬 Episode Title:* ${title}_*_\n\n*🔢 Choose a quality from the list below:*`;
 
     // 💬 Toggle List Message or Button Mode
     if (config.BUTTON === "true") {
       return await conn.sendMessage(from, {
         text: caption,
-        footer: config.FOOTER,
+        footer: config.FOTER,
         title: '📺 Cinesubz.lk Download Options',
         buttonText: "🎬 Select Quality",
         sections
@@ -2102,7 +2102,7 @@ console.log(mh)
             caption: `*🎬 Name :* ${img}\n\n${config.NAME}`,
             jpegThumbnail: resizedBotImg,
             mimetype: "video/mp4",
-            fileName: `${img}.mp4`,
+            fileName: `🎬KAVI-MD🎬 ${img}.mp4`,
         };
 
         await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });
@@ -2134,7 +2134,7 @@ cmd({
 
         const episodes = sadas.data.episodes;
         const allLinks = episodes.map(ep => ep.link).filter(Boolean);
-        const showimg = sadas.data.mainImage || "https://i.ibb.co/hcyQfwy/7a265c4eee41e2b7.jpg";
+        const showimg = sadas.data.mainImage || "https://files.catbox.moe/p8knwg.jpg";
         const showTitle = sadas.data.title || "Cinesubz_Show";
 
         const sampleEp = await cinesubz_tv_firstdl(allLinks[0]);
@@ -2166,7 +2166,7 @@ cmd({
 
         const listMessage = {
             text: `🎞 *${showTitle}*\n.`,
-            footer: config.FOOTER,
+            footer: config.FOTER,
             title: `📺 [Cinesubz Downloader]`,
             buttonText: "🔽 Quality තෝරන්න",
             sections
@@ -2203,7 +2203,7 @@ const listButtons = {
       await conn.sendMessage(from, {
     image: { url: config.LOGO},
     caption: msg,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 
 	    
@@ -2260,7 +2260,7 @@ cmd({
     try {
         const sadas = await cinesubz_tvshow_info(url);
         const episodes = sadas.data.episodes;
-        const showimg = sadas.data.mainImage || "https://i.ibb.co/hcyQfwy/7a265c4eee41e2b7.jpg";
+        const showimg = sadas.data.mainImage || "https://files.catbox.moe/p8knwg.jpg";
 
         if (!episodes || !episodes.length) return reply("❌ No episodes found for this link.");
 
@@ -2335,19 +2335,19 @@ try{
 
      if(!q) return await reply('*please give me text !..*')
 let sadas = await fetchJson(`https://darksadas-yt-cineszub-tv-shows.vercel.app/?url=${q}&apikey=pramashi`)
-	const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+	const details = (await axios.get('https://files.catbox.moe/9onksv.json')).data
      
 
-let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.data.title || 'N/A'}_*
+let msg = `*🩸 Title:-* *_${sadas.data.title || 'N/A'}_*
 
-*📅 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮* _${sadas.data.date || 'N/A'}_
-*🌎 𝗖ᴏᴜɴᴛʀʏ ➮* _${sadas.data.country || 'N/A'}_
-*💃 𝗥ᴀᴛɪɴɢ ➮* _${sadas.data.imdb || 'N/A'}_
-*⏰ 𝗥ᴜɴᴛɪᴍᴇ ➮* _${sadas.data.runtime || 'N/A'}_
-*💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.data.subtitle_author || 'N/A'}_
-*🎭 𝗚ᴇɴᴀʀᴇꜱ ➮* ${sadas.data.genres.join(', ') || 'N/A'}
+*📅 Release Date:-* _${sadas.data.date || 'N/A'}_
+*🌎 Country:-* _${sadas.data.country || 'N/A'}_
+*💃 Rating:-* _${sadas.data.imdb || 'N/A'}_
+*⏰ Runtime:-* _${sadas.data.runtime || 'N/A'}_
+*🙋 Sub By:-* _${sadas.data.subtitle_author || 'N/A'}_
+*🪄 Genares:-* ${sadas.data.genres.join(', ') || 'N/A'}
 
-> 🌟 Follow us : *${details.chlink}*`
+> 📌 Follow Movie: ${details.chlink}`
 
 await conn.sendMessage(config.JID || from, { image: { url: sadas.data.image.replace("-200x300", "") }, caption: msg })
 
@@ -2384,19 +2384,19 @@ if(!q) return await reply(msr.giveme)
 
         const data = response.data;
        
-const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const details = (await axios.get('https://files.catbox.moe/9onksv.json')).data
  
-        const movieInfo = `*☘️ 𝗧ɪᴛʟᴇ ➮* ${data.Title}
+        const movieInfo = `*🩸 Title:-* ${data.Title}
 
 
-*📅 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮* ${data.Released}
-*⏰ 𝗥ᴜɴᴛɪᴍᴇ ➮* ${data.Runtime}
-*🎭 𝗚ᴇɴᴀʀᴇꜱ ➮* ${data.Genre}
-*💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* ${data.Director}
-*🌎 𝗖ᴏᴜɴᴛʀʏ ➮* ${data.Country}
-*💃 𝗥ᴀᴛɪɴɢ ➮* ${data.imdbRating}
+*📆 Release Date:-* ${data.Released}
+*⏰ Run time:-* ${data.Runtime}
+*🙋 Sub By:-* ${data.Genre}
+*🌍 Country:-* ${data.Director}
+*🌟 Rating:-* ${data.Country}
+*🪄 Genares:-* ${data.imdbRating}
 
-> 🌟 Follow us : *${details.chlink}*`;
+> 🫟 Follow Movie: *${details.chlink}*`;
 
         // Define the image URL
         const imageUrl = data.Poster && data.Poster !== 'N/A' ? data.Poster : config.LOGO;
@@ -2436,7 +2436,7 @@ try{
 
 
 
-const pr = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
 
 // convert string to boolean
 const isFree = pr.mvfree === "true";
@@ -2550,7 +2550,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: config.LOGO },
     caption: caption,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 
 	    
@@ -2593,13 +2593,13 @@ if (!q || !q.includes('https://pirate.lk/movies/')) {
 let sadas = await pirate_dl(q)
 
 	
-let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.result.title  || 'N/A'}_*
+let msg = `*🩸 𝗧ɪᴛʟᴇ ➮* *_${sadas.result.title  || 'N/A'}_*
 
 *📅 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮* _${sadas.result.date  || 'N/A'}_
 *🌎 𝗖ᴏᴜɴᴛʀʏ ➮* _${sadas.result.country  || 'N/A'}_
-*💃 𝗥ᴀᴛɪɴɢ ➮* _${sadas.result.imdb  || 'N/A'}_
+*🌟 𝗥ᴀᴛɪɴɢ ➮* _${sadas.result.imdb  || 'N/A'}_
 *⏰ 𝗥ᴜɴᴛɪᴍᴇ ➮* _${sadas.result.runtime  || 'N/A'}_
-*💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.result.director  || 'N/A'}_
+*🙋 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.result.director  || 'N/A'}_
 
 `
 
@@ -2671,7 +2671,7 @@ const rowss = sadas.result.dl_links.map((v, i) => {
 
 
 const listButtons = {
-    title: "🎬 Choose a download link :)",
+    title: "❯❯ Choose a download link ❮❮",
     sections: [
       {
         title: "Available Links",
@@ -2684,7 +2684,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: sadas.result.image.replace("-200x300", "")},
     caption: msg,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 {
             buttonId: prefix + 'pidet ' + q,
@@ -2768,7 +2768,7 @@ if (!datas || !datas.includes('https://pixeldrain.com/u/')) {
             caption: `*🎬 Name :* ${dat}\n\n${config.NAME}`,
             mimetype: "video/mp4",
             jpegThumbnail: await (await fetch(botimg)).buffer(),
-            fileName: `${dat}.mp4`
+            fileName: `🎬KAVI-MD🎬 ${dat}.mp4`
         });
 
         await conn.sendMessage(from, { delete: up_mg.key });
@@ -2800,7 +2800,7 @@ try{
      if(!q) return await reply('*please give me text !..*')
 
 let sadas = await pirate_dl(q)
-const details = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const details = (await axios.get('https://files.catbox.moe/9onksv.json')).data
      
 	
 let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.result.title  || 'N/A'}_*
@@ -2811,7 +2811,7 @@ let msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.result.title  || 'N/A'}_*
 *⏰ 𝗥ᴜɴᴛɪᴍᴇ ➮* _${sadas.result.runtime  || 'N/A'}_
 *💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.result.director  || 'N/A'}_
 
-> 🌟 Follow us : *${details.chlink}*`
+> 🫟 Follow Movie: *${details.chlink}*`
 await conn.sendMessage(config.JID || from, { image: { url: sadas.result.image.replace("-200x300", "") }, caption: msg })
 
 
@@ -2839,7 +2839,7 @@ async (conn, m, mek, { from, q, prefix, isPre, isMe, isSudo, isOwner, reply }) =
 try{
 
 
-const pr = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+const pr = (await axios.get('https://files.catbox.moe/9onksv.json')).data;
 
 // convert string to boolean
 const isFree = pr.mvfree === "true";
@@ -2902,7 +2902,7 @@ const listMessage = {
 text: `_*SINHALASUB MOVIE SEARCH RESULTS 🎬*_
 
 *\`Input :\`* ${q}`,
-footer: config.FOOTER,
+footer: config.FOTER,
 title: 'cinesubz.co results 🎬',
 buttonText: '*Reply Below Number 🔢*',
 sections
@@ -2926,7 +2926,7 @@ const caption = `_*SINHALASUB MOVIE SEARCH RESULTS 🎬*_
 
   // Compose the listButtons object
   const listButtons = {
-    title: "Choose a Movie :)",
+    title: "❯❯ Choose a Movie ❮❮",
     sections: [
       {
         title: "Available Links",
@@ -2940,7 +2940,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: config.LOGO },
     caption: caption,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 
 	    
@@ -3008,19 +3008,19 @@ rows.push({
 		 
 	 );
         })
- const msg = `*☘️ 𝗧ɪᴛʟᴇ ➮* *_${sadas.title || 'N/A'}_*
+ const msg = `*🩸 Title:-* *_${sadas.title || 'N/A'}_*
 
-*📅 𝗥ᴇʟᴇꜱᴇᴅ ᴅᴀᴛᴇ ➮* _${sadas.date || 'N/A'}_
-*🌎 𝗖ᴏᴜɴᴛʀʏ ➮* _${sadas.country || 'N/A'}_
-*💃 𝗥ᴀᴛɪɴɢ ➮* _${sadas.rating || 'N/A'}_
-*⏰ 𝗥ᴜɴᴛɪᴍᴇ ➮* _${sadas.duration || 'N/A'}_
-*💁‍♂️ 𝗦ᴜʙᴛɪᴛʟᴇ ʙʏ ➮* _${sadas.author || 'N/A'}_
+*📅 Release Date:-* _${sadas.date || 'N/A'}_
+*🌎 Country:-* _${sadas.country || 'N/A'}_
+*🌟 Rating:-* _${sadas.rating || 'N/A'}_
+*⏰ Runtime:-* _${sadas.duration || 'N/A'}_
+*🙋 Sub By:-* _${sadas.author || 'N/A'}_
 `
 const buttonMessage = {
  
 image: {url: sadas.images[0] || images},	
   caption: msg,
-  footer: config.FOOTER,
+  footer: config.FOTER,
   buttons: rows,
   headerType: 4
 }
@@ -3049,7 +3049,7 @@ const rowss = sadas.downloadLinks.map((v, i) => {
 
 
 const listButtons = {
-    title: "🎬 Choose a download link :)",
+    title: "❯❯ Choose a download link ❮❮",
     sections: [
       {
         title: "Available Links",
@@ -3062,7 +3062,7 @@ if (config.BUTTON === "true") {
       await conn.sendMessage(from, {
     image: { url: sadas.images[0] || images},
     caption: msg,
-    footer: config.FOOTER,
+    footer: config.FOTER,
     buttons: [
 {
             buttonId: prefix + 'daqt ' + q,
