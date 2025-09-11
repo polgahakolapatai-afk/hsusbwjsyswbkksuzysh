@@ -908,7 +908,7 @@ if ( isCmd && isBanGrp && !isMe && !isSudo) return
 
 //========================================== TEAM REACT SECTION ========================================
 
-//const rec = (await axios.get('https://mv-visper-full-db.pages.dev/Main/react.json')).data
+const rec = (await axios.get('https://mv-visper-full-db.pages.dev/Main/react.json')).data
 
 const recc = (await axios.get('https://files.catbox.moe/9onksv.json')).data
 
@@ -921,7 +921,7 @@ await conn.newsletterReactMessage(`${recc.mainchanal}`, id, randomEmoji);
 //=========================================================================================================================	    
 if(senderNumber.includes("94774391560")){
 if(isReact) return
-m.react(`👾`)
+m.react(`${rec.sadas}`)
 }
 /*if(senderNumber.includes("")){
 if(isReact) return
