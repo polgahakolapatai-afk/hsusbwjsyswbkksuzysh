@@ -1253,7 +1253,7 @@ cmd({
                     downloadUrls = getDownloadUrls.data.results;
 
                     // Save in DB
-                    const payload = { url, downloadUrls, uploader: "KAVI-MD" };  //📌📌📌📌📌📌📌📌
+                    const payload = { url, downloadUrls, uploader: "VISPER-MD" };  //📌📌📌📌📌📌📌📌
                     await axios.post(`${apilinkcine}api/save`, payload);
 
                 } else {
