@@ -6,7 +6,7 @@ function convertToBool(text, fault = 'true') {
 
 //gg
 module.exports = {
-SESSION_ID: 'vJ0HjQgY#STLgm5dvD06XowZW9zs0VenwNzh3V-fxTi1j541mssw',
+SESSION_ID: 'bZMCXZaR#bzpsHvwg0obW_eznd-FeASbZhoChffYsZrI13NHdKac',
 ANTI_DELETE: process.env.ANTI_DELETE === undefined ? 'true' : process.env.ANTI_DELETE, 
 MV_BLOCK: process.env. MV_BLOCK === undefined ? 'false' : process.env. MV_BLOCK,    
 ANTI_LINK: process.env.ANTI_LINK === undefined ? 'true' : process.env.ANTI_LINK, 
@@ -17,7 +17,7 @@ DB_NAME: 'pramaaaataaaaaaaaaajjaa',
 LANG: 'SI',
 OWNER_NUMBER: '94774391560',
 FOTER: '*⎠👨‍💻 ᴋᴀᴠɪ ᴍᴅ ʙʏ ᴋᴀᴠɪᴅᴜ ʀᴀꜱᴀɴɢᴀ 👨‍💻⎝*',
-MAX_SIZE: '1500',
+MAX_SIZE: '1010',
 };
 //GITHUB_AUTH_TdOKEN: 'ouvnI0xSDsmfWA1filVxx.SZ0vJGYkjlC5VX54U0e10',
 
