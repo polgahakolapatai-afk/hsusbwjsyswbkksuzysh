@@ -2433,7 +2433,7 @@ async (conn, mek, m, { from, prefix, l, quoted, body, isCmd, command, args, q, i
             return await reply("❌ Could not retrieve the song. Please check your query.");
         }
 
-        let caption = `*\`🎼 🅅🄸🅂🄿🄴🅁 🅂🄿🄾🅃🄸🄵🅈 🄳🄾🅆🄽🄻🄾🄰🄳🄴🅁 🎼\`*
+        let caption = `*\`🎼 🄺🄰🅅🄸 🅂🄿🄾🅃🄸🄵🅈 🄳🄾🅆🄽🄻🄾🄰🄳🄴🅁 🎼\`*
 *┌──────────────────╮*
 *├ \`🎶 Title:\`* ${data.title}
 *├ \`🧑‍🎤 Artist:\`* ${data.artist}
@@ -2695,7 +2695,7 @@ cmd({
 \`👁️ *Views:*\` ${result.views}
 \`⏱️ *Duration:*\` ${result.duration}
 
-_🎧 Powered by VISPER Music_`;
+> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋᴀᴠɪᴅᴜ ʀᴀꜱᴀɴɢᴀ 🌟*`;
 
                 // Send thumbnail using buffer
                 try {
