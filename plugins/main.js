@@ -1127,77 +1127,58 @@ async (conn, mek, m, { reply, from }) => {
 
 
 
+
+
 cmd({
     pattern: "forward",
     react: "⏩",
-    alias: ["f"],
-    desc: "forward film and msg",
+alias: ["f"],
+     desc: "forwerd film and msg",
     use: ".f jid",
     category: "owner",
     filename: __filename
-}, async (conn, mek, m, { from, q, isMe, isOwner, isSudo, reply }) => {
+},
+async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, isSudo, isOwner, isMe, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isIsuru, isTharu,  isSupporters, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 
-    if (!isMe && !isOwner && !isSudo) return await reply('*📛OWNER COMMAND*');
-    if (!q || !m.quoted) {
-        return reply("*Please give me a Jid and Quote a Message to continue.*");
-    }
-
-    // Split and trim JIDs
-    let jidList = q.split(',').map(jid => jid.trim());
-    if (jidList.length === 0) {
-        return reply("*Provide at least one Valid Jid. ⁉️*");
-    }
-
-    // ===== [NEWSLETTER STYLE CONTEXT] ===== //
-    const newsletterInfo = {
-        key: {
-            remoteJid: "status@broadcast",
-            participant: "0@s.whatsapp.net",
-        },
-        message: {
-            newsletterAdminInviteMessage: {
-                newsletterJid: "120363417070951702@newsletter",
-                newsletterName: "MOVIE CIRCLE",
-                caption: "𝙺𝙰𝚅𝙸 𝙼𝙳 𝚅𝙴𝚁𝙸𝙵𝙸𝙴𝙳",
-                inviteExpiration: 0,
-            },
-        },
-    };
-
-    // ===== [FORWARD CONTEXT] ===== //
-    const FORWARD_CONTEXT = {
-        isForwarded: true,
-        forwardingScore: 999,
-        forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363417070951702@newsletter",
-            newsletterName: "KAVIDU RASANGA 💀",
-            serverMessageId: 143,
-        },
-    };
-
-    let successfulJIDs = [];
-
-    for (let i of jidList) {
-        try {
-            await conn.sendMessage(
-                i,
-                {
-                    ...mek.quoted,
-                    contextInfo: FORWARD_CONTEXT
-                },
-                { quoted: newsletterInfo } // 🔥 Newsletter bubble
-            );
-            successfulJIDs.push(i);
-        } catch (e) {
-            console.log(e);
-        }
-    }
-
-    if (successfulJIDs.length > 0) {
-        return reply(`*Message Forwarded*\n\n` + successfulJIDs.join("\n"));
-    }
+if ( !isMe && !isOwner && !isSudo ) return await reply('*📛OWNER COMMAND*')
+if (!q || !m.quoted) {
+return reply("*Please give me a Jid and Quote a Message to continue.*");
+}
+  // Split and trim JIDs
+  let jidList = q.split(',').map(jid => jid.trim());
+  if (jidList.length === 0) {
+    return reply("*Provide at least one Valid Jid. ⁉️*");
+  }
+  // Prepare the message to forward
+  let Opts = {
+    key: mek.quoted?.["fakeObj"]?.["key"]
+  };
+  // Handle document message
+  if (mek.quoted.documentWithCaptionMessage?.message?.documentMessage) {
+    let docMessage = mek.quoted.documentWithCaptionMessage.message.documentMessage;
+    const mimeTypes = require("mime-types");
+    let ext = mimeTypes.extension(docMessage.mimetype) || "file";
+    docMessage.fileName = docMessage.fileName || `file.${ext}`;
+  }
+  
+  Opts.message = mek.quoted;
+  let successfulJIDs = [];
+  // Forward the message to each JID
+  for (let i of jidList) {
+try {
+await conn.forwardMessage(i, Opts, false);
+successfulJIDs.push(i);
+} catch (error) {
+console.log(e);
+}
+}
+  // Response based on successful forwards
+if (successfulJIDs.length > 0) {
+return reply(`*Message Forwarded*\n\n` + successfulJIDs.join("\n"))
+} else {
+console.log(e)
+}
 });
-
 
 
 cmd({
