@@ -134,13 +134,13 @@ async (conn, mek, m, { from, q, reply, l }) => {
             return await reply("*❌ Failed to fetch file from Google Drive!*");
         }
 
-        let txt = `*🗃️ VISPER GDRIVE DOWNLOADER 🗃️*
+        let txt = `*🗃️ KAVI MD GDRIVE DOWNLOADER 🗃️*
 
-*┌──────────────────*
+*┌──────────────────➢*
 *├ 🗃️ Name :* ${res.fileName}
 *├ ⏩ Type :* ${res.mimetype}
 *├ 📁 Size :* ${res.fileSize}
-*└──────────────────*`;
+*└──────────────────➢*`;
  await reply(txt);
 try {
     const bytes = await checkFileSize(res.downloadUrl, config.MAX_SIZE);
@@ -323,13 +323,13 @@ async(conn, mek, m, {
     const result = results.videos[0];
     const wm = config.FOOTER;
 
-    let caption = `\`🎧 🅅🄸🅂🄿🄴🅁 🅂🄾🄽🄶 🄳🄾🅆🄽🄻🄾🄳🄴🅁 🎧\`	
-*┌────────────────────┐*
+    let caption = `\`🎧 KAVI MD SONG DOWNLOADER 🎧\`	
+*┌────────────────────➢*
 *├ \`🎶 Title\` : ${result.title}*
-*├ \`🐼 Views\` : ${result.views}*
+*├ \`🙋 Views\` : ${result.views}*
 *├ \`⌛ Duration\` : ${result.duration}*
 *├ \`📎 URL\` : ${result.url}*
-*└────────────────────┘*`;
+*└────────────────────➢*`;
 
     const buttons = [
       {
@@ -358,10 +358,10 @@ async(conn, mek, m, {
     };
 
 const listButtons = {
-  title: "🎵 Choose an audio format",
+  title: "❯❯ choose an audio format ❮❮",
   sections: [
     {
-      title: "Audio Formats 🎶",
+      title: "Kavi md Audio Formats 🎶",
       rows: [
         {
           title: "Audio Format",
@@ -454,14 +454,14 @@ async (conn, mek, m, {
     const result = results.videos[0];
     const wm = config.FOOTER;
 
-    let caption = `🎶 *VISPER SONG DOWNLOADER* 🎶
+    let caption = `🎶 *KAVI MD SONG DOWNLOADER* 🎶
 
-┌────────────────────┐
+┌────────────────────➢
 │ 🎵 *Title:* ${result.title}
 │ 👁️ *Views:* ${result.views}
 │ ⏱️ *Duration:* ${result.duration}
 │ 🔗 *URL:* ${result.url}
-└────────────────────┘`;
+└────────────────────➢`;
 
  await conn.sendMessage(
  from, 
@@ -596,7 +596,7 @@ await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });
 })
 
 cmd({
-    pattern: "alex",
+    pattern: "ksong",
     alias: ["ytsong"],
     use: '.song lelena',
     react: "🎧",
@@ -647,7 +647,7 @@ await conn.buttonMessage(from, buttonMessage, mek)
 
 
 cmd({
-    pattern: "alexaa",
+    pattern: "ksong2",
     react: "🔮",
     dontAddCommandList: true,
     filename: __filename
@@ -690,7 +690,7 @@ await conn.sendMessage(
 
 
 cmd({
-    pattern: "alexa",
+    pattern: "ksong2",
     react: "⬇️",
     dontAddCommandList: true,
     filename: __filename
@@ -816,14 +816,14 @@ try{
 
 const mov = await fetchJson(`https://darksadasyt-tiktokdl.vercel.app/api/tiktok?q=${q}`)
 
-let caption = `*\`🪺 VISPER TIK TOK DOWNLODER 🪺\`*
+let caption = `*\`🎬 KAVI MD TIK TOK DOWNLODER 🎬\`*
 
-*┌──────────────────*
-*├ \`🎩 Title\` :* ${mov.title}
-*├ \`🎃 Region\` :* ${mov.regions}
+*┌─────────────────➢*
+*├ \`🍇 Title\` :* ${mov.title}
+*├ \`🌿 Region\` :* ${mov.regions}
 *├ \`⏰ Duration\` :* ${mov.runtime}
 *├ \`🔗 Url\` :* ${q}
-*└──────────────────*
+*└─────────────────➢*
 `
 
 
@@ -999,7 +999,7 @@ cmd({
     pattern: "fb",
     alias: ["facebook"],
     use: '.fb <facebook url>',
-    react: "🏮",
+    react: "👣",
     desc: 'Download videos from Facebook',
     category: "download",
     filename: __filename
@@ -1038,12 +1038,12 @@ cmd({
 
         const duration = sadas.result.duration || 'Unknown';
 
-        const caption = `\`🏮 VISPER FB DOWNLOADER 🏮\`\n\n` +
-                   `*┌──────────────────*\n` +
+        const caption = `\`🌐 KAVI MD FB DOWNLOADER 🌐\`\n\n` +
+                   `*┌─────────────────➢*\n` +
                    `*├ \`🐼 Title:\`* Facebook video\n` +
                    `*├ \`⏱️ Duration:\`* ${duration}\n` +
                    `*├ \`🔗 Url:\`* ${q}\n` +
-                   `*└──────────────────*`;
+                   `*└─────────────────➢*`;
 
         const buttons = [];
 
@@ -1409,14 +1409,14 @@ async(conn, mek, m,{from, q, reply}) => {
     const data = await download(q)
     if (!data || !data.dllink) return reply("❌ APK not found!")
 
-    let listdata = `*\`🗃️ VISPER APK DOWNLOADER 🗃️\`*
+    let listdata = `*\`🗃️ KAVI MD APK DOWNLOADER 🗃️\`*
 
-*┌──────────────────╮*
+*┌──────────────────➢*
 *├ \`📚 Name\` :* ${data.name}
 *├ \`📦 Package\` :* ${data.package}
 *├ \`⬆️ Last update\` :* ${data.lastup}
 *├ \`📥 Size\` :* ${data.size}
-*└──────────────────╯*
+*└──────────────────➢*
 
 ${config.FOOTER}`
 
@@ -1458,13 +1458,13 @@ try{
     var results = await yts(url);
     let wm = config.FOOTER
     var result = results.videos[0]
-     let caption = `*📹 🅅🄸🅂🄿🄴🅁 🅅🄸🄳🄴🄾 🄳🄾🅆🄽🄻🄾🄰🄳🄴🅁 📹*
-*┌─────────────────────┐*
+     let caption = `*🎬 KAVI MD VIDEO DOWNLOADER 🎬*
+*┌─────────────────────➢*
 *├ \`📹 Title\` : ${result.title}* 
 *├ \`🐼 Views\` : ${result.views}*
 *├ \`⌛Duration\` : ${result.duration}*
 *├ \`📎 URL\` : ${result.url}*
-*└─────────────────────┘*`
+*└─────────────────────➢*`
 const sections = [
   {
 title: "`Video type 📽️`",
@@ -2026,14 +2026,14 @@ try{
 await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key }})
 if(!q) return await conn.sendMessage(from , { text: '*🔥 Enter mediafire link...*' }, { quoted: mek } ) 
 const data = await fetchJson(`https://mfire-dl.vercel.app/mfire?url=${q}`)
-let listdata = `*\`🔥 𝙑𝙄𝙎𝙋𝙀𝙍 𝙈𝙀𝘿𝙄𝘼𝙁𝙄𝙍𝙀 𝘿𝙊𝙒𝙉𝙇𝙊𝘿𝙀𝙍 🔥\`*
+let listdata = `*\`🔥 KAVI MD MEDIA FIRE DOWNLOADER 🔥\`*
 
-*┌──────────────────╮*
-*├ \`🔥 Name\` :* ${data.fileName}
+*┌──────────────────➢*
+*├ \`🌐 Name\` :* ${data.fileName}
 *├ \`⏩ Type\` :* ${data.fileType}
 *├ \`📁 Size\` :* ${data.size}
 *├ \`📅 Date\` :* ${data.date}
-*└──────────────────╯*`
+*└──────────────────➢*`
 
 	
 reply(listdata)
@@ -2290,7 +2290,7 @@ async (conn, m, mek, { from, q, isMe, prefix, reply }) => {
 try{
 
 let res = await fetchJson(`https://ph-slow-dl.vercel.app/api/analyze?q=${q}`)
-let msg = `*\`🔞 𝙑𝙄𝙎𝙋𝙀𝙍 𝙋𝙊𝙍𝙉𝙃𝙐𝘽 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿𝙀𝙍 🔞\`*
+let msg = `*\`🔞 𝙋𝙊𝙍𝙉𝙃𝙐𝘽 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿𝙀𝙍 🔞\`*
 
 *┌──────────────────*
 *├ \`❄️ Title\` :* ${res.video_title}
