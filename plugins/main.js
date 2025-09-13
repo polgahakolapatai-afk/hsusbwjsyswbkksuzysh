@@ -15,7 +15,7 @@ const file_size_url = (...args) => import('file_size_url')
 
 cmd({
   pattern: "alive",
-  react: "🙋",
+  react: "♨️",
   alias: ["online", "test", "bot"],
   desc: "Check if bot is online.",
   category: "main",
