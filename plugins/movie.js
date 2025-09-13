@@ -30,7 +30,7 @@ const { search, getep, dl } = require('darksadasyt-anime')
 
 cmd({
   pattern: "mv",
-  react: "🔎",
+  react: "🎬",
   alias: ["movie", "film", "cinema"],
   desc: "all movie search",
   category: "movie",
