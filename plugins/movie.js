@@ -1210,7 +1210,7 @@ let isUploadingg = false; // Track upload status
 
 
 
-const cinesubzDownBase = "https://drive2.cscloud12.online";
+const cinesubzDownBase = "https://drive2.cscloud12.online/server5";
 const apilinkcine = "https://cinesubz-store.vercel.app/";
 
 cmd({
