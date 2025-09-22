@@ -483,7 +483,7 @@ async (conn, mek, m, { reply, isOwner, isSachintha, isSavi, isSadas, isMani, isM
   }
 });
 
-
+/*
 cmd({
   pattern: "update",
   react: "ℹ️",
@@ -518,7 +518,7 @@ async (conn, mek, m, { reply, isOwner, isSachintha, isSavi, isSadas, isMani, isM
   }
 });
 
-
+*/
 
 
 cmd({
